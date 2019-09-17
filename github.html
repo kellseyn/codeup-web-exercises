@@ -7,6 +7,27 @@
         a{
             text-decoration: none;
         }
+        main a{
+            padding-bottom: 10px;
+        }
+        h4 {
+            background-color: ghostwhite;
+            padding: 20px;
+        }
+        table{
+            width: 100%;
+
+        }
+        table img{
+            padding: 20px;
+        }
+        table th{
+            float: left;
+        }
+        span{
+            position: relative;
+            top: -45px;
+        }
         #direct {
             background-color: #000;
             color: white;
@@ -20,18 +41,8 @@
         #links a:visited{
             color: #000;
         }
-        footer {
+        #about, #help{
             font-size: smaller;
-        }
-        h4 {
-            background-color: ghostwhite;
-            padding: 20px;
-        }
-        table{
-            width: 100%;
-        }
-        table img{
-            padding: 20px;
         }
     </style>
 </head>
@@ -56,62 +67,43 @@
         </div>
     </header><br>
     <main>
-        <table border="0|1">
-            <h4>Codeup's dev team</h4>
+        <h4>Codeup's dev team</h4>
+        <table>
             <tr>
-                <td>
-                    <img src="img/gitav.png" width="48"alt="">
-                </td>
-                <th><a href="">Kent Beck</a></th>
-                <td></td>
-                <td>Member</td>
-                <td>1 team</td>
+                <th>
+                    <img src="img/gitav.png" width="48"alt=""><a href="" ><span>Kent Beck</span></a><br>&emsp;&emsp;&emsp;&emsp;&emsp; <span>KentBeck</span></th>
+                <td>Member &emsp; 1 team</td>
             </tr>
             <tr>
-                <td></td>
-                <td>KentBeck</td>
-                <td></td>
-                <td></td>
+                <th>
+                    <img src="img/chevron.jpg" width="48" alt=""><a href=""><span>Codeup Instruction Staff</span></a><br>&emsp;&emsp;&emsp;<span>CodeupInstructors</span></th>
+                <td>Member &emsp; 1 team</td>
             </tr>
             <tr>
-                <td>
-                    <img src="img/chevron.jpg" width="48" alt="">
-                </td>
-                <th><a href="">Codeup Instruction Staff</a></th>
-                <td>&emsp;&emsp;&emsp;</td>
-                <td>Member</td>
-                <td>1 team</td>
-            </tr>
-            <tr>
-                <td></td>
-                <td>CodeupInstructors</td>
-            </tr>
-            <tr>
-                <td>
-                    <img src="img/gitav2.png" width="48" alt="">
-                </td>
-                <th><a href="">Martin Fowler</a></th>
-                <td></td>
-                <td>Member</td>
-                <td>0 teams</td>
+                <th>
+                    <img src="img/gitav2.png" width="48" alt=""><a href=""><span>Martin Fowler</span></a></th>
+                <td>Member &emsp; 0 teams</td>
             </tr>
         </table>
     </main>
     <hr>
     <footer>
-        © 2018 GitHub, Inc.
-        <a href="">Terms</a>
-        <a href="">Privacy</a>
-        <a href="">Security</a>
-        <a href="">Status</a>
-        <a href="">Help</a>
-        <span>&emsp;&emsp;&emsp;&emsp;</span>
-        <a href="">Contact GitHub</a>
-        <a href="">API</a>
-        <a href="">Training</a>
-        <a href="">Shop</a>
-        <a href="">Blog</a>
-        <a href="">About</a>
+        <div id="help" style="float: left" >
+            © 2018 GitHub, Inc.
+            <a href="">Terms</a>
+            <a href="">Privacy</a>
+            <a href="">Security</a>
+            <a href="">Status</a>
+            <a href="">Help</a>
+        </div>
+        <div id="about" style="float: right">
+            <a href="">Contact GitHub</a>
+            <a href="">API</a>
+            <a href="">Training</a>
+            <a href="">Shop</a>
+            <a href="">Blog</a>
+            <a href="">About</a>
+        </div>
     </footer>
 </body>
 </html>
