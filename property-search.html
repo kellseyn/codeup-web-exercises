@@ -6,17 +6,76 @@
 </head>
 <body>
     <form method="POST" action="https://request-inspector.glitch.me/">
-        <p>Property Type</p>
+        <p>Property Type:</p>
         <select name="ptype">
             <option value="home" selected>Single-Family Home</option>
             <option value="condo">Condominium</option>
             <option value="townhouse">Townhouse</option>
-            <option value="duplexes">Duplexes</option>
+            <option value="duplexes">Duplex</option>
             <option value="apartments">Apartment</option>
         </select>
         <br>
 
+        <p>Square Footage</p>
+        <select name="area">
+            <option value="1" selected><500 sqft</option>
+            <option value="2">501-700 sqft</option>
+            <option value="3">701-900 sqft</option>
+            <option value="4">901-1100 sqft</option>
+            <option value="5">>1100 sqft</option>
+        </select>
+        <br>
 
+        <p>Min_Price</p>
+        <select name="min">
+            <option value="1" selected><$500</option>
+            <option value="2">$501-$700</option>
+            <option value="3">$701-$900</option>
+            <option value="4">$901-$1100</option>
+            <option value="5">>$1100</option>
+        </select>
+        <br>
+
+        <p>Max_Price</p>
+        <select name="max">
+            <option value="1" selected><$500</option>
+            <option value="2">$501-$700</option>
+            <option value="3">$701-$900</option>
+            <option value="4">$901-$1100</option>
+            <option value="5">>$1100</option>
+        </select>
+        <br>
+        <br>
+
+        <label for="zipcode">Zipcode:</label>
+        <input id="zipcode" name="zipcode" type="text">
+        <br>
+
+        <p>Number of bedrooms:</p>
+        <select name="bedroom">
+            <option value="1" selected>1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+        <br>
+
+        <p>Number of bathrooms:</p>
+        <select name="bathroom">
+            <option value="1" selected>1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+        </select>
+        <br>
+        <br>
+
+        <label for="etc">Etc...:</label>
+        <input id="etc" name="etc" type="text">
+        <br>
+        <br>
+
+        <button type="submit">Search now</button>
     </form>
 </body>
 </html>
