@@ -21,7 +21,10 @@
             flex: 1;
         }
         .indent{
-            padding-left: 40px;
+            padding-left: 45px;
+        }
+        .tab{
+            padding-left: 15px;
         }
     </style>
 </head>
@@ -56,10 +59,48 @@
             <label for="address">Property Address:</label>
             <input class="fill-width" id="address" name="address" type=text" required>
         </div>
-        <div class="indent">
+        <div class="indent" class="flex-container">
             <label for="movedate">Anticipated: Move-in Date:</label>
-            <input class="movedate" id="movedate" name="movedate" type=text" required>
+            <input class="fill-width" id="movedate" name="movedate" type=text" required>
+
+            <label for="rent">Monthly Rent: $</label>
+            <input class="fill-width" id="rent" name="rent" type=text" required>
+
+            <label for="deposit">Security Deposit: $</label>
+            <input class="fill-width" id="deposit" name="deposit" type=text" required>
         </div>
+        <p>Applicant was referred to Landlord by: </p>
+        <div class="flex-container tab">
+            <input id="estateagent" type="checkbox" name="estateagent" value="true">
+            <label for="estateagent">Real estate agent </label>
+            <input class="fill-width" id="refername" name="refername" type=text" required>
+            <label for="refername"><em>(name)</em></label>
+            <input class="fill-width" id="referrednum" name="referrednum" type=text" required>
+            <label for="referrednum"><em>(phone)</em></label>
+        </div>
+        <div class="flex-container tab">
+            <input id="newspaper" type="checkbox" name="newspaper" value="true">
+            <label for="newspaper">Newspaper </label>
+            <input id="sign" type="checkbox" name="sign" value="true">
+            <label for="sign">Sign </label>
+            <input id="internet" type="checkbox" name="internet" value="true">
+            <label for="internet">Internet </label>
+            <input id="other" type="checkbox" name="other" value="true">
+            <label for="other">Other </label>
+            <input class="fill-width" id="othername" name="othername" type=text" required>
+            <label for="othername"></label>
+        </div>
+        <br>
+        <div class="flex-container">
+            <label for="name">Applicant's name (first, middle, last)</label>
+            <input class="fill-width" id="name" name="name" type=text" required>
+        </div>
+        <div class="indent">
+            <label for="realtor">Real estate agent </label>
+            <input id="realtor" type="checkbox" name="realtor" value="true">
+
+        </div>
+
     </main>
 
 </body>
