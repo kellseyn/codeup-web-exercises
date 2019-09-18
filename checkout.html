@@ -5,6 +5,68 @@
     <title>Checkout</title>
 </head>
 <body>
- n
+    <form method="POST" action="https://request-inspector.glitch.me/">
+        <h3>Credit card information</h3>
+        <label for="ccnum">Credit card number:</label>
+        <input id="ccnum" name="ccinfo" type=text" required>
+        <br>
+        <h3>Expiration date:</h3>
+        <p>Month / Year</p>
+        <select name="month">
+            <option value="1" selected>1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+        </select>
+
+        <select name="year">
+            <option value="2019" selected>2019</option>
+            <option value="2020">2020</option>
+            <option value="2021">2021</option>
+            <option value="2022">2022</option>
+            <option value="2023">2023</option>
+            <option value="2024">2024</option>
+            <option value="2025">2025</option>
+            <option value="2026">2026</option>
+            <option value="2027">2027</option>
+            <option value="2028">2028</option>
+            <option value="2029">2029</option>
+            <option value="2030">2030</option>
+        </select>
+        <br>
+        <br>
+        <label for="cccvv">Security code:</label>
+        <input id="cccvv" name="ccinfo" type=text" required>
+        <br>
+        <br>
+
+        <h3>Billing address</h3>
+        <label for="address">Street Number:</label>
+        <input id="address" name="address" type=text" required>
+        <br>
+        <label for="address2">Street Number 2:</label>
+        <input id="address2" name="address2" type=text" required>
+        <br>
+        <label for="addressst">State</label>
+        <input id="addressst" name="addressst" type=text" required>
+        <br>
+        <label for="zipcode">Zipcode</label>
+        <input id="zipcode" name="zipcode" type=text" required>
+        <br>
+        <br>
+        <label for="onfile">Keep this credit card on file for future transactions.</label>
+        <input id="onfile" type="checkbox" name="onfile" value="true">
+        <br>
+        <br>
+        <button type="submit">Buy Now!</button>
+    </form>
 </body>
 </html>
