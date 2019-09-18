@@ -7,6 +7,9 @@
         header{
             text-align: center;
         }
+        span{
+            padding-bottom: 50px;
+        }
         .line1{
             text-align: right;
             font-size: smaller;
@@ -96,11 +99,60 @@
             <input class="fill-width" id="name" name="name" type=text" required>
         </div>
         <div class="indent">
-            <label for="realtor">Real estate agent </label>
-            <input id="realtor" type="checkbox" name="realtor" value="true">
-
+            <p>Is there a co-applicant?
+            <input id="co" type="checkbox" name="co" value="true">
+            <label for="co">Yes</label>
+            <input id="coapp" type="checkbox" name="co" value="true">
+            <label for="coapp">No</label><strong><em>&emsp; If yes, co-applicant must submit a separate application.</em></strong></p>
+            <div class="flex-container">
+                <label for="maiden">Applicant's former last name (maiden or married)</label>
+                <input class="fill-width" id="maiden" name="maiden" type=text" required>
+            </div>
+        </div>
+        <div class="flex-container">
+            <label for="email">E-mail</label>
+            <input class="fill-width" id="email" name="email" type=text" required>
+            <label for="home">Home Phone</label>
+            <input class="fill-width" id="home" name="home" type=text" required>
+        </div>
+        <div class="flex-container">
+            <label for="work">Work Phone</label>
+            <input class="fill-width" id="work" name="work" type=text" required>
+            <label for="cell">Mobile/Pager Phone</label>
+            <input class="fill-width" id="cell" name="cell" type=text" required>
+        </div>
+        <div class="flex-container">
+            <label for="ssn">Soc. Sec. No.</label>
+            <input class="fill-width" id="ssn" name="ssn" type=text" required>
+            <label for="dln">Driver License No.</label>
+            <input class="fill-width" id="dln" name="dln" type=text" required>
+            <p>in</p>
+            <input class="fill-width" id="state" name="state" type=text" required>
+            <label for="state">(state)</label>
+        </div>
+        <div class="flex-container">
+            <label for="dob">Date of Birth</label>
+            <input class="fill-width" id="dob" name="dob" type=text" required>
+            <label for="height">Height</label>
+            <input class="fill-width" id="height" name="height" type=text" required>
+            <label for="weight">Weight</label>
+            <input class="fill-width" id="weight" name="weight" type=text" required>
+            <label for="eye">Eye Color</label>
+            <input class="fill-width" id="eye" name="eye" type=text" required>
         </div>
 
+        <div class="flex-container">
+            <p><span>Emergency Contact:</span></p>
+            <label for="ice">Name:</label>
+            <input class="fill-width" id="ice" name="ice" type=text" required>
+            <label for="iceadd">Address:</label>
+            <input class="fill-width" id="iceadd" name="iceadd" type=text" required>
+            <label for="icephone">Phone:</label>
+            <input class="fill-width" id="icephone" name="icephone" type=text" required>
+            <label for="iceemail">E-mail:</label>
+            <input class="fill-width" id="iceemail" name="iceemail" type=text" required>
+
+        </div>
     </main>
 
 </body>
