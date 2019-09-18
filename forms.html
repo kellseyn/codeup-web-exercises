@@ -3,9 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <title>Register With Us</title>
+    <style>
+        span {
+            position: relative;
+            top: -122px;
+        }
+        body{
+            background-color: mediumpurple;
+        }
+    </style>
 </head>
 <body>
-    <form method="POST" action="https://request-inspector.glitch.me/">
+    <form method="get" action="https://request-inspector.glitch.me/">
 
         <label for="email">E-Mail:</label>
         <input id="email" name="email" type="text" placeholder="Enter your email address">
@@ -15,28 +24,22 @@
         <input id="password" name="password" type="password" placeholder="Password">
         <br>
 
-        <label for="bio">Bio:</label>
-        <textarea id="bio" name="bio" placeholder="Bio:"></textarea>
+        <span><label for="bio">Bio:</label></span>
+        <textarea id="bio" name="bio" placeholder="Bio:" cols="30" rows="10"></textarea>
         <br>
 
         <p>How did you hear about us?</p>
-        <label>
-            <input type="radio" name="heard" value="Billboard">Billlboard
-        </label>
-        <label>
+
+            <input type="radio" name="heard" value="Billboard" checked>Billlboard
             <input type="radio" name="heard" value="Radio Advertisement">Radio Advertisement
-        </label>
-        <label>
             <input type="radio" name="heard" value="Internet Advertisement">Internet
-        </label>
-        <label>
             <input type="radio" name="heard" value="Other">Other
-        </label>
+
         <br>
 
         <p>What web browser do you use?</p>
         <select name="browser">
-            <option value="Google Chrome">Google Chrome</option>
+            <option value="Google Chrome" selected>Google Chrome</option>
             <option value="Firefox">Firefox</option>
             <option value="Internet Explorer">Internet Explorer</option>
             <option value="Safari">Safari</option>
