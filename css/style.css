@@ -7,6 +7,9 @@ body{
 header{
     text-align: center;
 }
+header img{
+    float: left;
+}
 h1.fancy-header{
     color: mediumpurple;
 }
