@@ -1,7 +1,14 @@
 body{
     text-align: center;
     background-color: cornsilk;
-    font-family: 'Pacifico', cursive ;
+    font-family: 'Courgette', cursive;
+    background-image: url(../img/bridge.jpg);
+}
+header{
+    text-align: center;
+}
+h1.fancy-header{
+    color: mediumpurple;
 }
 h2{
     color: aqua;
@@ -15,25 +22,22 @@ table{
     table-layout: fixed;
 }
 th{
-    /*color: aqua;*/
     border: 1px solid black;
     width: 100%;
     height: 50%;
-    /*padding: 20px  20px;*/
     background-color: rosybrown;
 
 }
+td,footer,nav{
+    text-shadow: 1px 1px 3px white, -1px -1px 3px white;
+}
 ul{
-    color: blue;
-    /*text-shadow: 1px 1px black;*/
     list-style-type: none;
+    color: blue;
+    text-shadow: 1px 1px white;
 }
-h1.fancy-header{
-    color: mediumpurple;
-
-}
-header{
-    text-align: center;
+ul li:before{
+    content: '✓';
 }
 a:hover{
     color: greenyellow;
@@ -44,10 +48,6 @@ a:visited{
 #top:hover{
     color: darkblue;
 }
-.process{
-    list-style: none;
-    background: url("../img/honeycomb.svg") center;
-}
 .lefty{
     text-align: left;
     padding-left: 10px;
@@ -56,3 +56,7 @@ a:visited{
     text-align: right;
     padding-right: 10px;
 }
+.middle,.righty{
+    list-style-position: inside ;
+}
+
