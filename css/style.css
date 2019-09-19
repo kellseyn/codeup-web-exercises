@@ -1,6 +1,34 @@
+body{
+    background-color: beige;
+    font-family: 'Pacifico', cursive ;
+}
 h2{
     color: aqua;
 }
-.fancy-header{
-    color: mediumpurple;
+h1,h2{
+    text-shadow: 1px 1px black;
+    text-decoration: underline;
 }
+table{
+    padding: 20px  20px;
+    background-color: coral;
+}
+ul{
+    color: mediumpurple;
+    list-style-type: none;
+}
+h1.fancy-header{
+    text-align: center;
+    color: mediumpurple;
+
+}
+#top:hover{
+    color: darkblue;
+}
+
+.process{
+    list-style: none;
+    background-image: url("../img/chevron.jpg");
+
+}
+
