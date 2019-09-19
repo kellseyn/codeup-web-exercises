@@ -7,9 +7,9 @@
         header{
             text-align: center;
         }
-        span{
-            padding-bottom: 50px;
-        }
+        /*span{*/
+            /*padding-bottom: 50px;*/
+        /*}*/
         .line1{
             text-align: right;
             font-size: smaller;
@@ -28,6 +28,9 @@
         }
         .tab{
             padding-left: 15px;
+        }
+        .margin{
+            margin-left: 8em;
         }
     </style>
 </head>
@@ -62,7 +65,7 @@
             <label for="address">Property Address:</label>
             <input class="fill-width" id="address" name="address" type=text" required>
         </div>
-        <div class="indent" class="flex-container">
+        <div class="flex-container indent">
             <label for="movedate">Anticipated: Move-in Date:</label>
             <input class="fill-width" id="movedate" name="movedate" type=text" required>
 
@@ -141,18 +144,24 @@
             <input class="fill-width" id="eye" name="eye" type=text" required>
         </div>
 
+
         <div class="flex-container">
-            <p><span>Emergency Contact:</span></p>
+            <span>Emergency Contact: </span>
             <label for="ice">Name:</label>
             <input class="fill-width" id="ice" name="ice" type=text" required>
+        </div>
+        <div class="flex-container margin">
             <label for="iceadd">Address:</label>
             <input class="fill-width" id="iceadd" name="iceadd" type=text" required>
+        <div class="flex-container margin">
             <label for="icephone">Phone:</label>
             <input class="fill-width" id="icephone" name="icephone" type=text" required>
-            <label for="iceemail">E-mail:</label>
-            <input class="fill-width" id="iceemail" name="iceemail" type=text" required>
         </div>
-        <div>
+        <div class="flex-container margin">
+             <label for="iceemail">E-mail:</label>
+             <input class="fill-width" id="iceemail" name="iceemail" type=text" required>
+        </div>
+       <div>
             <p>Name all other persons who will occupy the Property:</p>
             <label for="res1">Name:</label>
             <input class="fill-width" id="res1" name="res1" type=text" required>
@@ -170,7 +179,7 @@
             <input class="fill-width" id="res3r" name="res3r" type=text" required>
             <label for="res4r">E-mail:</label>
             <input class="fill-width" id="res4r" name="res4r" type=text" required>
-
+        </div>
     </main>
 
 </body>
