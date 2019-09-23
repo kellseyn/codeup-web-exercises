@@ -6,6 +6,25 @@ body, html {
     font-family: Arial, Ubuntu, sans-serif;
 }
 .message {
-
+    width: 100%;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    padding: 5px 7px;
+    margin: 5px;
 }
-
+.message-info {
+    color: blue;
+    background-color: lightblue;
+}
+.message-success {
+    color: green;
+    background-color: lightgreen;
+}
+.message-warning {
+    color: gold;
+    background-color: yellow;
+}
+.message-error {
+    color: red;
+    background-color: pink;
+}
