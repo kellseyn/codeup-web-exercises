@@ -23,6 +23,7 @@ fieldset {
     box-shadow: 10px 10px 5px 0 rgba(0,0,0,0.75);
     padding: 1em;
     background-color: white;
+    border: none;
     /* There must be 1em between the content and the border of this element */
     /* It should have no border */
     /* Its background should be white */
@@ -38,7 +39,7 @@ fieldset {
 
 .form-group {
     width: 100%;
-    margin: .5em 0em;
+    margin: .5em 0;
 
     /* This element must use 100% of the width */
     /* It should have a separation of .5em from elements on top of it and below it*/
@@ -67,7 +68,7 @@ fieldset {
     padding: 8px;
     color: #fff;
     font-weight: bold;
-    border: 1px solid lightgray;
+    border: 1px solid lightgrey;
     /* There must be a separation of 8px between the text and the border of this element */
     /* The text color of this element should be white and bold */
     /* The border of this element should be 1px, and its color should be light grey */
