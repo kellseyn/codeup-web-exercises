@@ -29,7 +29,7 @@ ul {
     list-style-type: none;
 }
 .container {
-    padding-bottom: 2em;
+    padding: 2em;
     width: 100%;
 }
 .top-nav {
@@ -67,7 +67,7 @@ ul {
     top: 235px;
 }
 .profile-form {
-    line-height: 90px;
+    line-height: 80px;
 }
 .profile-details {
     float: left;
@@ -81,8 +81,6 @@ ul {
 }
 .media {
     width: 100%;
-    /*max-width: 50px;*/
-    margin-top: 1.33em;
     background: var(--light-bg);
     border-bottom: 1px var(--separator-color);
     padding: .5em;
