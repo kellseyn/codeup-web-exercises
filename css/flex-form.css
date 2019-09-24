@@ -10,7 +10,6 @@ body {
     font-family: sans-serif;
     margin: 0;
     overflow: hidden;
-    display: flex;
 }
 
 .puppiness {
@@ -30,7 +29,6 @@ body {
     position: relative;
     border:20px solid rgba(0,0,0,0.3);
     border-radius:5px;
-    display: flex;
 }
 
 .flex-form > * {
@@ -56,13 +54,15 @@ body {
 /*flex solution*/
 .cover {
     display: flex;
-    flex-direction: row;
     justify-content: center;
+    align-items: center;
 }
 .flex-form {
-    /* flex items */
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .destination {
-    /* bigger item */
+    justify-content: center;
+    align-items: center;
 }
