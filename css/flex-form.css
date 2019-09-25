@@ -59,10 +59,8 @@ body {
 }
 .flex-form {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    margin: auto;
 }
 .destination {
-    justify-content: center;
-    align-items: center;
+    flex-basis: 30%;
 }
