@@ -73,10 +73,8 @@ a {
 }
 
 .card {
-    /*display: flex;*/
-    /*flex-direction: column;*/
-    /*justify-content: space-evenly;*/
-    margin: 15px;
+
+    flex-basis: 100%;
 }
 
 
