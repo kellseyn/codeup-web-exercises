@@ -1,42 +1,22 @@
 *{
     box-sizing: border-box
 }
-a{
-    text-decoration: none;
+body{
+    display: grid;
+    grid-template-columns: repeat(8 , 1fr);
+    grid-template-rows: repeat(16 , 1fr);
+    width: 98vw;
+    height: 98vh;
+    grid-gap: 1em;
+    margin: 10px;
 }
-main a{
-    padding-bottom: 10px;
-}
-h4 {
-    background-color: ghostwhite;
-    padding: 20px;
-}
-table{
-    width: 100%;
-}
-table img{
-    padding: 20px;
-}
-table th{
-    float: left;
-}
-span{
-    position: relative;
-    top: -45px;
-}
-#direct {
-    background-color: #000;
+header{
+    display: flex;
+    flex-direction: row;
+    grid-area: 1 / 1 / 2 / -1;
+    background-color: black;
     color: white;
 }
-#direct a:visited {
-    color: white;
-}
-#links {
-    background-color: ghostwhite;
-}
-#links a:visited{
-    color: #000;
-}
-#about, #help{
-    font-size: smaller;
+ul{
+    list-style-type: none;
 }
