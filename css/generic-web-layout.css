@@ -1,0 +1,40 @@
+a{
+    text-decoration: none;
+}
+main a{
+    padding-bottom: 10px;
+}
+h4 {
+    background-color: ghostwhite;
+    padding: 20px;
+}
+table{
+    width: 100%;
+
+}
+table img{
+    padding: 20px;
+}
+table th{
+    float: left;
+}
+span{
+    position: relative;
+    top: -45px;
+}
+#direct {
+    background-color: #000;
+    color: white;
+}
+#direct a:visited {
+    color: white;
+}
+#links {
+    background-color: ghostwhite;
+}
+#links a:visited{
+    color: #000;
+}
+#about, #help{
+    font-size: smaller;
+}
