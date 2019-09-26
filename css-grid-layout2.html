@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS grid layout 1</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            display: inline-grid;
+            grid-template-columns: 15% 85% ;
+            grid-template-rows: 20% 50% 15% 15%;
+            grid-gap: 1em;
+            margin: 2px;
+            height: 100vh;
+            width: 100%;
+            background-color: white;
+        }
+        body .container{
+            background-color: #9BCE0B;
+            display: flex;
+            padding: 1em;
+        }
+        header{
+            grid-area: 1 / 1 / 2 / -1;
+        }
+        nav{
+            grid-area: 2 / 1 / -2 / 2;
+        }
+        article{
+            grid-area: 2 / 2 / 3 / -1;
+        }
+        aside{
+            grid-area: 3 / 2 / -2 / -1;
+        }
+        footer{
+            grid-area: 4 / 1 / -1 / -1;
+        }
+    </style>
+</head>
+<body>
+<header class="container">
+    Header
+</header>
+<nav class="container">
+    Nav
+</nav>
+<article class="container">
+    Article
+</article>
+<aside class="container">
+    Ads
+</aside>
+<footer class="container">
+    Footer
+</footer>
+</body>
+</html>
