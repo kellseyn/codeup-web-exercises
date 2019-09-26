@@ -8,10 +8,11 @@ body {
 main {
     /* add margin to make the top of our grid more visible */
     margin-top: 2em;
-    background: lightgreen;
+    background: black;
     display: inline-grid;
     grid-template-columns: 62.5px 62.5px 62.5px 62.5px 62.5px 62.5px 62.5px 62.5px;
     grid-template-rows: 62.5px 62.5px 62.5px 62.5px 62.5px 62.5px 62.5px 62.5px;
+    grid-gap: 5px;
 }
 main div {
     font-size: 2em;
@@ -22,10 +23,10 @@ main div {
     justify-content: center;
     align-items: center;
 }
-.example-item{
-    background: lightgreen;
-    opacity: .7;
-}
+/*.example-item{*/
+    /*background: lightgreen;*/
+    /*opacity: .7;*/
+/*}*/
 /*
     These classes are just a way to explicitly place the grey tiles
     so that other items may be overlaid.
@@ -40,30 +41,17 @@ main div {
 .eight {grid-area: 8 / 3 / 8 / 1}
 .nine {grid-area: 8 / 3 / 8 / -1}
 
-.one{
+.one , .nine{
     background-color: darkblue;
 }
-.two{
+.two , .eight{
     background-color: red;
 }
-.three{
+.three , .five , .seven{
     background-color: white;
 }
-.four{
+.four, .six{
     background-color: yellow;
 }
-.five{
-    background-color: white;
-}
-.six{
-    background-color: yellow;
-}
-.seven{
-    background-color: white;
-}
-.eight{
-    background-color: red;
-}
-.nine{
-    background-color: darkblue;
-}
+
+
