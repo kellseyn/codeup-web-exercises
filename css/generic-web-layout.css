@@ -6,10 +6,7 @@ body{
     grid-template-columns: repeat(8 , 1fr);
     grid-template-rows: repeat(13 , 1fr);
     width: 98vw;
-    height: 98vh;
     font-family: Roboto, sans-serif;
-    /*grid-gap: 1em;*/
-    /*margin: 10px;*/
 }
 h1{
     color: #419388;
@@ -18,33 +15,52 @@ header{
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
+    align-items: center;
     grid-area: 1 / 1 / 2 / -1;
     background-color: black;
+    height: 90px;
+    overflow: auto;
+}
+a{
+    text-decoration: none;
+}
+a:link{
     color: white;
+}
+a:visited{
+    color: white;
+}
+header a:hover{
+    background-color: grey;
 }
 ul{
     list-style-type: none;
-
 }
 header li{
     display: inline-block;
+
+    margin-left: -20px;
+    margin-right: 40px;
 }
 nav{
     background-color: lightgrey;
     padding: 1em;
     grid-area: 2 / 1 / -1 / 2;
 }
-nav ul{
-    padding: 0;
+nav li{
+    margin-left: -40px;
+    padding-top: 1em;
 }
 main{
     padding: 1em;
     grid-area: 2 / 2 / -4 / -3;
+    display: grid;
+    grid-template-rows: repeat(3 , 1fr);
 }
 aside{
-    grid-area: 2 / -3 / -5 / -1;
+    grid-area: 2 / -3 / -4 / -1;
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-rows: repeat(3 , 1fr);
 }
 aside p{
     border: 1px solid grey;
@@ -53,44 +69,53 @@ aside section{
     text-align: center;
 }
 aside .small{
-    padding: 1em 0;
+    padding: 1.5em 0;
 }
 aside .big{
-    padding: 2.5em 0;
+    padding: 3em 0;
 }
 footer{
     grid-area: 11 / 2 / -1 / -1;
     display: grid;
-    grid-template-rows: repeat(4 , 1fr);
-
+    grid-template-rows: 40% 40% 20%;
+    grid-gap: 0;
 }
 footer ul{
     grid-area: 1 / 1 / 2 / -1;
     display: flex;
     justify-content: center;
-
 }
 footer li{
     display: inline-block;
+    padding: 1em;
+    text-decoration: none;
+}
+footer a:visited{
+    color: black;
 }
 footer a:hover{
     background-color: black;
     color: white;
 }
 footer .foot{
-    grid-area: 2 / 2 / 4 / -1;
-    background-color: gray;
+    grid-area: 2 / 2 / 3 / -1;
+    background-color: #666666;
     color: white;
     display: flex;
     align-items: center;
     padding: 1em;
+    margin: 0;
 }
 footer .by{
-    grid-area: 4 / 2 / 5 / -1;
+    grid-area: 3 / 2 / 4 / -1;
     background-color: #262626;
     color: white;
     display: flex;
     align-items: center;
     padding: 1em;
     font-size: small;
+    margin: 0;
+}
+span{
+    text-decoration: underline;
 }
