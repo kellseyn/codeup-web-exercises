@@ -18,8 +18,6 @@ header{
     align-items: center;
     grid-area: 1 / 1 / 2 / -1;
     background-color: black;
-    height: 90px;
-    overflow: auto;
 }
 a{
     text-decoration: none;
@@ -32,15 +30,17 @@ a:visited{
 }
 header a:hover{
     background-color: grey;
+    margin-left:-20px;
+    padding:20px;
+;
 }
 ul{
     list-style-type: none;
 }
 header li{
-    display: inline-block;
-
+    display: inline-block;width:100px;
     margin-left: -20px;
-    margin-right: 40px;
+
 }
 nav{
     background-color: lightgrey;
@@ -86,7 +86,7 @@ footer ul{
     justify-content: center;
 }
 footer li{
-    display: inline-block;
+    display: inline-block;width: 50px;
     padding: 1em;
     text-decoration: none;
 }
@@ -96,6 +96,8 @@ footer a:visited{
 footer a:hover{
     background-color: black;
     color: white;
+    padding: 5px;
+    margin-left: -4px;
 }
 footer .foot{
     grid-area: 2 / 2 / 3 / -1;
