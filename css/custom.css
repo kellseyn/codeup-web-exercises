@@ -1,6 +1,28 @@
-.jumbotron{
-    width: 100%;
+html,body{
+    margin: 0;
+    padding: 0;
 }
-.display-4{
-
+.container-fluid{
+    padding: 0;
+}
+.jumbotron{
+    background-image: url("http://java.codeup.com/examples/bootstrap/pizza.png");
+    width: 100%;
+    padding-right: 0;
+    padding-left: 0;
+    text-align: center;
+}
+h1{
+    width: 100%;
+    opacity: 0.6;
+}
+.card{
+    margin: 1em;
+}
+.form-check{
+    margin-left: 1em;
+}
+.btn{
+    float: right;
+    width: 10%;
 }
