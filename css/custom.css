@@ -6,7 +6,7 @@ html,body{
     padding: 0;
 }
 .jumbotron{
-    background-image: url("http://java.codeup.com/examples/bootstrap/pizza.png");
+    background-image: url("../img/pizza.png");
     width: 100%;
     padding-right: 0;
     padding-left: 0;
@@ -24,5 +24,4 @@ h1{
 }
 .btn{
     float: right;
-    width: 10%;
 }
