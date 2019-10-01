@@ -2,14 +2,10 @@ html,body{
     margin: 0;
     padding: 0;
 }
-.container-fluid{
-    padding: 0;
-}
+
 .jumbotron{
     background-image: url("../img/pizza.png");
     width: 100%;
-    padding-right: 0;
-    padding-left: 0;
     text-align: center;
 }
 h1{
@@ -24,7 +20,4 @@ h1{
 }
 .btn{
     float: right;
-}
-.question{
-    padding-left: 0;
 }
