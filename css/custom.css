@@ -25,3 +25,6 @@ h1{
 .btn{
     float: right;
 }
+.question{
+    padding-left: 0;
+}
