@@ -36,7 +36,3 @@ function productOffer(){
    return premium || (items > 2 && date);
 }
 console.log(productOffer());
-
-var username = 'codeup';
-var password = 'notastrongpassword';
-password.length >= 5 && password.indexOf(username) === -1 && username.length <= 20 && username === username.trim() && password === password.trim();
