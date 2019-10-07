@@ -1,4 +1,24 @@
 "use strict";
+function sayHello(name) {
+
+    return "Hello, " + name + "!";
+}
+
+console.log(sayHello("codeup"));
+
+function helloMessage() {
+    var helloMessage = sayHello("Kellsey");
+    return helloMessage;
+}
+
+console.log(helloMessage());
+
+function myName(){
+    var myName = "Kellsey"
+    return helloMessage(myName)
+}
+
+console.log(helloMessage());
 
 /**
  * TODO:
@@ -28,6 +48,12 @@
 // and stores it in a variable named random
 var random = Math.floor((Math.random() * 3) + 1);
 
+
+function isTwo(x) {
+    return (random % 2 == 0);
+}
+
+console.log(isTwo(random));
 /**
  * TODO:
  * Create a function called 'isTwo' that takes a number as a parameter.
@@ -46,6 +72,10 @@ var random = Math.floor((Math.random() * 3) + 1);
  * number)
  */
 
+function calculateTip(per, num) {
+    return per * num;
+}
+console.log(calculateTip(.15 , 33.42));
 /**
  * TODO:
  * Create a function named 'calculateTip' to calculate a tip on a bill at a
@@ -57,7 +87,8 @@ var random = Math.floor((Math.random() * 3) + 1);
  * > calculateTip(0.25, 25.50) // returns 6.37
  * > calculateTip(0.15, 33.42) // returns 5.013
  */
-
+var per = prompt("Your bill costs $" + num + ". What percentage would you like to tip?");
+alert("You should tip $" + (num * per));
 /**
  * TODO:
  * Use prompt and alert in combination with your calculateTip function to
