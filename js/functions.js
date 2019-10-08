@@ -1,10 +1,9 @@
 "use strict";
 function sayHello(name) {
-
     return "Hello, " + name + "!";
 }
 
-console.log(sayHello("codeup"));
+sayHello("codeup");
 
 function helloMessage() {
     var helloMessage = sayHello("Kellsey");
@@ -74,8 +73,11 @@ console.log(isTwo(random));
 
 function calculateTip(per, num) {
     return per * num;
+    var per = prompt("Your bill costs $" + num + ". What percentage would you like to tip?");
+    alert("You should tip $" + (num * per));
 }
 console.log(calculateTip(.15 , 33.42));
+
 /**
  * TODO:
  * Create a function named 'calculateTip' to calculate a tip on a bill at a
@@ -87,14 +89,20 @@ console.log(calculateTip(.15 , 33.42));
  * > calculateTip(0.25, 25.50) // returns 6.37
  * > calculateTip(0.15, 33.42) // returns 5.013
  */
-var per = prompt("Your bill costs $" + num + ". What percentage would you like to tip?");
-alert("You should tip $" + (num * per));
+
 /**
  * TODO:
  * Use prompt and alert in combination with your calculateTip function to
  * prompt the user for the bill total and a percentage they would like to tip,
  * then display the dollar amount they should tip
  */
+
+function applyDiscount(price,discount) {
+    return price - (price * discount);
+
+}
+    console.log(applyDiscount(100,0.2))
+
 
 /**
  * TODO:

@@ -12,6 +12,7 @@ body{
     font-size: 16px;
     line-height: 1.7;
     color: #777;
+    z-index: -1;
     background-color: silver;
     background: linear-gradient(
             to left bottom,
@@ -61,6 +62,8 @@ body{
     animation-delay: 3s;
     animation-timing-function: ease-out;
     }
+
+
 @media screen and (min-width: 570px){
 
     @keyframes moveInLeft {
@@ -88,5 +91,12 @@ body{
             opacity: 1;
             transform: translate(0);
         }
+    }
+    .header-featured-blocks ul{
+        position: relative;
+    }
+    .header-featured-blocks li {
+        position: absolute;
+        /*display: none;*/
     }
 }
