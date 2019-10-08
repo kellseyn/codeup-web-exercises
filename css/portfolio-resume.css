@@ -11,8 +11,7 @@ body{
     background: linear-gradient(
             to left bottom,
             rgba(224, 224, 224, 0.8),
-            rgba(138, 138, 138, 0.8)),
-    url(../img/) top;
+            rgba(138, 138, 138, 0.8)), top;
 }
 
 .header {
@@ -22,8 +21,66 @@ body{
             to left top,
             rgba(205, 119, 248, 0.8),
             rgba(40, 180, 131, 0.8)),
-    url(../img/) top;
+    url(../img/codeup-stitch.png) top;
     position: relative;
     clip-path: polygon(0 0, 100% 100%, 100% 0);
     z-index: 1;
+}
+.heading-primary{
+    color: #fff;
+    text-transform: uppercase;
+    backface-visibility: hidden;
+}
+.heading-primary-main{
+    display: block;
+    float: right;
+    font-size: 60px;
+    font-weight: 400;
+    letter-spacing: 35px;
+
+    animation-name: moveInLeft;
+    animation-duration: 3s;
+    animation-delay: 3s;
+    animation-timing-function: ease-out;
+}
+.heading-primary-sub{
+    display: block;
+    float: right;
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 17.5px;
+
+    animation-name: moveInRight;
+    animation-duration: 3s;
+    animation-delay: 3s;
+    animation-timing-function: ease-out;
+    }
+@media screen and (min-width: 570px){
+
+    @keyframes moveInLeft {
+        0% {
+            opacity: 0;
+            transform: translateX(-100px);
+        }
+        80% {
+            transform: translateX(10px);
+        }
+        100% {
+            opacity: 1;
+            transform: translate(0);
+        }
+    }
+    @keyframes moveInRight {
+        0% {
+            opacity: 0;
+            transform: translateX(100px);
+        }
+        80% {
+            transform: translateX(-10px);
+        }
+        100% {
+            opacity: 1;
+            transform: translate(0);
+        }
+    }
 }
