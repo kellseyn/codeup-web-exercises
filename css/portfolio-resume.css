@@ -102,11 +102,5 @@ body{
             transform: translate(0);
         }
     }
-    /*.header-featured-blocks ul{*/
-        /*position: relative;*/
-    /*}*/
-    /*.header-featured-blocks li {*/
-        /*position: absolute;*/
-        /*!*display: none;*!*/
-    /*}*/
+
 }
