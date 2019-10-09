@@ -3,7 +3,7 @@ function sayHello(name) {
     return "Hello, " + name + "!";
 }
 
-sayHello("codeup");
+console.log(sayHello("codeup"));
 
 function helloMessage() {
     var helloMessage = sayHello("Kellsey");
@@ -48,8 +48,8 @@ console.log(helloMessage());
 var random = Math.floor((Math.random() * 3) + 1);
 
 
-function isTwo(x) {
-    return (random % 2 == 0);
+function isTwo(num) {
+    return num === 2;
 }
 
 console.log(isTwo(random));
