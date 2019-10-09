@@ -16,6 +16,32 @@
  * Can you refactor your code to use functions?
  */
 
+// var ranNum = confirm("Would you like to enter a number?");
+
+//
+// if(ranNum) {
+//     var runNum = parseInt(prompt("Enter a number"));
+//     alert((!isNaN(runNum) === true) + " that's NOT a number!");
+// } else {
+//         alert("Bah Ram Youuuu");
+// }
+//         if(runNum % 2 === 0){
+//         alert(runNum + " is even");
+//     } else {
+//         alert(runNum + " is odd");
+//     }
+//
+//     alert(runNum + 100 + " is what your number plus 100 sum up to");
+//
+//     if(runNum >= 0){
+//         alert(runNum + " is positive");
+//     } else {
+//         alert(runNum + " is negative");
+//     }
+
+
+
+
 /* ########################################################################## */
 
 /**
@@ -35,6 +61,7 @@
  * Test your function by passing various string literals to it and
  * console.logging the function's return value
  */
+
 
 // Don't change the next two lines!
 // These lines create two variables for you:
@@ -60,6 +87,28 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * user to your `analyzeColor` function. Alert the return value from your
  * function to show it to the user.
  */
+
+function analyzeColor(colors) {
+    var colors = (randomColor);
+    if (colors === "blue") {
+        return "blue is the color of the sky";
+    } else if (colors === "red") {
+        return "Strawberries are red";
+    }else if (colors === "orange") {
+        return "Oranges are orange";
+    }else if (colors === "yellow") {
+        return "Sunflowers are yellow";
+    }else if (colors === "green") {
+        return "Grass is green";
+    }
+    else {
+        alert("I don't know anything about that color");
+    }
+}
+
+console.log(analyzeColor(colors));
+
+
 
 /* ########################################################################## */
 
