@@ -45,7 +45,9 @@ function isVowel(letter) {
 function isConsonant(letter) {
 
 }
-isCapital(letter)
+function isCapital(letter) {
+
+}
 function isLowerCase(letter) {
 
 }
