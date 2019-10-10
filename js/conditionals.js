@@ -15,7 +15,11 @@
  *
  * Can you refactor your code to use functions?
  */
-
+//1 need to (confirm) to ask user if want to play, if not then game over
+//2 if they click  confirm need (conditional) ask the user for number (prompt)
+//3 need to check if it is a number
+//4 if it is number need to check even/odd number + 100 neg/pos
+//5 if  not a number tell them not a number
 
 
 function numGame() {
@@ -81,18 +85,6 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * You should see a different message everytime you refresh the page
  */
 
-/**
- * TODO:
- * Refactor your above function to use a switch-case statement
- */
-
-/**
- * TODO:
- * Prompt the user for a color when the page loads, and pass the input from the
- * user to your `analyzeColor` function. Alert the return value from your
- * function to show it to the user.
- */
-
 function analyzeColor(colors) {
     var colors = (randomColor);
     if (colors === "blue") {
@@ -112,6 +104,35 @@ function analyzeColor(colors) {
 }
 
 console.log(analyzeColor(colors));
+
+/**
+ * TODO:
+ * Refactor your above function to use a switch-case statement
+ */
+
+function analyzeColorSwitch(color){
+
+    switch (color) {
+        case "blue":
+            return "blue is blue";
+        case "red":
+            return "red is red";
+        case "cyan":
+            return "cyan is cyan";
+        default:
+            return "you're making up colors now"
+    }
+}
+
+/**
+ * TODO:
+ * Prompt the user for a color when the page loads, and pass the input from the
+ * user to your `analyzeColor` function. Alert the return value from your
+ * function to show it to the user.
+ */
+
+var userColor = prompt("enter a color");
+alert(analyzeColor(userColor));
 
 
 
@@ -142,6 +163,8 @@ var totalAmount = prompt("How much is the total cost?");
 
 function calculateTotal(luckyNumber, totalAmount) {
     switch (luckyNumber){
+        case 0:
+            return 0;
         case 1:
             return (10 / 100) * totalAmount;
         case 2:
@@ -151,7 +174,7 @@ function calculateTotal(luckyNumber, totalAmount) {
         case 4:
             return (50 / 100) * totalAmount;
         case 5:
-            return 0;
+            return 1;
         default:
             return  totalAmount;
 
