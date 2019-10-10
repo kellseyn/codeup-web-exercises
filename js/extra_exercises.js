@@ -1,37 +1,37 @@
 "use strict";
 
 function isOdd(number) {
-
+    return number % 2 !== 0;
 }
 function isEven(number) {
-
+    return number % 2 === 0;
 }
 function identity(input) {
 
 }
 function isFive(input) {
-
+    return input === 5;
 }
 function addFive(input) {
-
+    return input + 5;
 }
 function isMultipleOfFive(input) {
-
+    return input % 5 === 0 ;
 }
 function isThree(input) {
-
+    return input === 3;
 }
 function isMultipleOfThreeAndFive(input) {
-
+    return isMultipleOfFive(input) && (input % 3 === 0);
 }
 function isMultipleOf(target, n) {
-
+    return target % n === 0;
 }
 function isTrue(boolean) {
-
+    return boolean === boolean;
 }
 function isFalse(boolean) {
-
+    return boolean !== boolean;
 }
 function isTruthy(input) {
 

@@ -16,29 +16,34 @@
  * Can you refactor your code to use functions?
  */
 
-// var ranNum = confirm("Would you like to enter a number?");
 
-//
-// if(ranNum) {
-//     var runNum = parseInt(prompt("Enter a number"));
-//     alert((!isNaN(runNum) === true) + " that's NOT a number!");
-// } else {
-//         alert("Bah Ram Youuuu");
-// }
-//         if(runNum % 2 === 0){
-//         alert(runNum + " is even");
-//     } else {
-//         alert(runNum + " is odd");
-//     }
-//
-//     alert(runNum + 100 + " is what your number plus 100 sum up to");
-//
-//     if(runNum >= 0){
-//         alert(runNum + " is positive");
-//     } else {
-//         alert(runNum + " is negative");
-//     }
 
+function numGame() {
+    var ranNum = confirm("Would you like to enter a number?");
+    if (ranNum === false){
+           return alert("Bah Ram Youuuu");
+        } else {
+        var runNum = parseInt(prompt("Enter a number"));
+    }
+
+    if (isNaN(runNum)){
+        return " that's NOT a number!";
+        }
+
+    if (runNum % 2 === 0) {
+        alert(runNum + " is even");
+        } else {
+        alert(runNum + " is odd");
+    }
+
+    alert(runNum + 100 + " is what your number plus 100 sum up to");
+
+    if (runNum >= 0) {
+        alert(runNum + " is positive");
+    } else {
+        alert(runNum + " is negative");
+    }
+}
 
 
 
@@ -132,6 +137,28 @@ console.log(analyzeColor(colors));
  * return value.
  */
 
+var totalAmount = prompt("How much is the total cost?");
+
+
+function calculateTotal(luckyNumber, totalAmount) {
+    switch (luckyNumber){
+        case 1:
+            return (10 / 100) * totalAmount;
+        case 2:
+            return (25 / 100) * totalAmount;
+        case 3:
+            return (35 / 100) * totalAmount;
+        case 4:
+            return (50 / 100) * totalAmount;
+        case 5:
+            return 0;
+        default:
+            return  totalAmount;
+
+    }
+
+}
+
 /**
  * TODO:
  * Uncomment the line below to generate a random number between 0 and 6.
@@ -140,4 +167,15 @@ console.log(analyzeColor(colors));
  * price before the discount was, and what their price after the discount is.
  */
 // Generate a random number between 0 and 6
-// var luckyNumber = Math.floor(Math.random() * 6);
+
+var luckyNumber = Math.floor(Math.random() * 6);
+
+
+alert("Your lucky number is: " + (luckyNumber));
+
+alert("Your price BEFORE the discount was: " + (totalAmount));
+
+alert("Your new price after the discount is: " + (totalAmount - (calculateTotal(luckyNumber, totalAmount))));
+
+
+console.log(luckyNumber);
