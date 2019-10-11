@@ -95,4 +95,13 @@ function arrLength(array){
     return array.length;
 }
 
-//10/11 write
+//10/11 write a js function that returns thr quotient of 2 numbers but only when passed 2 numbers it should return false in al other cases
+    function quotient(num1, num2){
+        if(typeof num1 === 'number' && typeof num2 === 'number'){
+        return num1 / num2;
+        } else {
+            return false;
+        }
+    }
+    console.log(quotient(4, 2));
+    console.log(quotient(red, 5));
