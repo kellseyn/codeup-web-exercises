@@ -87,16 +87,16 @@ body{
 .directory i{
     height: 50px;
 }
-/*.inner {*/
-    /*background: rgb(9, 201, 153);*/
-    /*padding: 1em;*/
-    /*border-radius: 30px;*/
-/*/ / width: 250 px;*/
-    /*clip-path: circle(50% at 0% 50%);*/
-    /*transition: all .5s ease-in-out;*/
-    /*cursor: pointer;*/
-    /*margin-top: -149px;*/
-/*}*/
+.inner {
+    background: rgb(9, 201, 153);
+    padding: 1em;
+    border-radius: 30px;
+/ / width: 250 px;
+    clip-path: circle(50% at 0% 50%);
+    transition: all .5s ease-in-out;
+    cursor: pointer;
+    margin-top: -149px;
+}
 
 @media screen and (max-width: 569px){
 
