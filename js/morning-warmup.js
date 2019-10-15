@@ -104,4 +104,10 @@ function arrLength(array){
         }
     }
     console.log(quotient(4, 2));
-    console.log(quotient(red, 5));
+    console.log(quotient(3, 5));
+
+//10/15 write a js function that that takes in an array that has a length of 5 console log each element of the array.
+    function logArray(arrayInput){
+        console.log(arrayInput);
+    }
+    logArray(["Kellsey", "Zackry", "Betty", "Polly", "Pocky"]);
