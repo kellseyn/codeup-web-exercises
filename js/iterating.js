@@ -59,16 +59,29 @@
      */
     var first = [1, 2, 3, 4, 5];
 
-    first.forEach(function(arr){
-       console.log(first[0])
-    });
 
-    first.forEach(function(arr){
-        console.log(first[1])
-    });
-
-    first.forEach(function(arr){
-        console.log(first[first.length - 1])
-    });
+    function first(array){
+        return array[0];
+    }
+    console.log([1, 2, 3, 4, 5]);
+    function second(array){
+        return array[1];
+    }
+    console.log([1, 2, 3, 4, 5]);
+    function last(array){
+        return array[array.length - 1]
+    }
+    console.log([1, 2, 3, 4, 5]);
+    // first.forEach(function(arr){
+    //    console.log(first[0])
+    // });
+    //
+    // first.forEach(function(arr){
+    //     console.log(first[1])
+    // });
+    //
+    // first.forEach(function(arr){
+    //     console.log(first[first.length - 1])
+    // });
 
 })();
