@@ -33,9 +33,9 @@
         <div class="text-box">
             <h1 class="heading-primary">
                 <span class="heading-primary-main">I AM A</span>
-                <div class="row"><br><br></div>
+                <div class="row"><br></div>
                 <div id="carouselExampleControls" class="carousel slide carousel-fade row heading-primary-sub" data-ride="carousel">
-                    <div class="carousel-inner d-flex col-6 ">
+                    <div class="carousel-inner d-flex col">
                         <div class="carousel-item active">
                             <span>Cross Stitcher</span>
                         </div>
@@ -63,8 +63,19 @@
     </div>
 
 <main>
-    <div>
-         <div id="directory">
+    <div class="center-menu hide-on-tablet">
+        <label class="menu-button" for="menu-open" aria-hidden="true"><span class="fas fa-laptop-code fa-5x"></span></label>
+        <input class="menu-open" id="menu-open" type="checkbox" aria-hidden="true" />
+        <nav class="menu" role="navigation">
+            <a href="#" class="hide-on-tablet icon fab fa-html5 fa-3x">HTML 5</a>
+            <a href="#" class="hide-on-tablet icon fab fa-css3-alt fa-3x">CSS 3</a>
+            <a href="#" class="hide-on-tablet icon fab fa-js-square fa-3x">JavaScript</a>
+            <a href="#" class="hide-on-tablet icon fab fa-java fa-3x">Shipyards</a>
+            <a href="#" class="hide-on-tablet icon fab fa-angular fa-3x">Stats</a>
+        </nav>
+    </div>
+    <div class="hide-on-mobile">
+         <div id="directory" >
              <div class="outer-box">
                  <div class="inner-box">
                      <span class="d-name">i</span>
@@ -92,11 +103,11 @@
 
 </main>
 
-<footer class="navbar navbar-light bg-dark footer-bottom">
-    <a class="navbar-brand" href="#">
+<footer class="navbar navbar-light bg-dark footer-bottom d-flex justify-content-end mb-0">
+    <a class="navbar-brand d-none" href="#">
         <!--<img src="png/kellsLove_56.png" width="30" height="30" class="d-inline-block align-bottom" alt="">-->
-        <i class="fab fa-github-square"><a href="https://github.com/kellseyn">GitHub</a></i>
-        <i class="fab fa-linkedin"><a href="https://linkedin.com/in/kellseyneagley/">LinkedIn</a></i>
+        <i class="fab fa-github-square px-2"><a href="https://github.com/kellseyn">GitHub</a></i>
+        <i class="fab fa-linkedin px-2"><a href="https://linkedin.com/in/kellseyneagley/">LinkedIn</a></i>
     </a>
 
 </footer>
