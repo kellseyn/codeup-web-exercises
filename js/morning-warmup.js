@@ -111,3 +111,14 @@ function arrLength(array){
         console.log(arrayInput);
     }
     logArray(["Kellsey", "Zackry", "Betty", "Polly", "Pocky"]);
+
+//10/17 write a js function that takes in an input and returns true if the input is a string at least 8 characters in length. it should reutrn false for all other input
+    function strLength(x){
+        if (typeof x === "string" && x.length >= 8){
+            return true;
+        }
+        return false;
+    }
+    console.log(strLength("kellseyn"));
+
+    // return typeof str === "string" && str.length >= 8;
