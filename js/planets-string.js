@@ -14,7 +14,7 @@
 
 
     var planetsBreak = planetsArray.join("<br>");
-    console.log(planetsBreak);
+    document.write(planetsBreak);
 
     /**
      * TODO:
@@ -27,10 +27,15 @@
      * string, and <li> tags around each planet.
      */
 
-    var planetsList = planetsArray.join("</li><li>");
+    // var planetsList = planetsArray.join("</li><li>");
     // var planetsFirst = planetsList.unshift("<ul>" , "<li>");
     // var planetsLast = planetsFirst.push("</li>" , "</ul>");
+    var planetsUL = "<ul>";
+    planetsArray.forEach(function (planet) {
+        planetsUL += "<li>" + planet + "</li>"
+    });
+    planetsUL += "</ul>";
 
-    console.log(planetsList);
+    document.write(planetsUL);
 
 })();
