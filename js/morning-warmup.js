@@ -122,3 +122,12 @@ function arrLength(array){
     console.log(strLength("kellseyn"));
 
     // return typeof str === "string" && str.length >= 8;
+
+//10/18 write a js function that takes in a floating point number and returns a number rounded down it should return falase for all inputs that aren't numbers
+    function roundDown(num1){
+       if(typeof num1 === "number" && !isNaN(num1)){
+           return Math.floor(num1);
+       }
+       return false;
+    }
+    console.log(roundDown(10.8));
