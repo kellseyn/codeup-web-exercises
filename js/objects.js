@@ -139,24 +139,35 @@
      *   `showBookInfo` function.
      */
 
-    function createBook() {
-        var title = prompt("What is the title of your book?");
-        var firstName = prompt("What is the author's first name?");
-        var lastName = prompt("What is the author's last name?");
-
+    function createBook(title, first, last) {
+        var book = {};
+        book.title = "title";
+        book.author = {
+            firstName: first,
+            lastName: last
+        };
+        return book;
     }
-        console.log(createBook());
-        books.forEach(function (book, index) {
-            console.log("Book # " + (index + 1));
-            console.log("Title: " + book.title);
-            console.log("Author: " + book.name.firstName + " " + book.name.lastName);
-            console.log("---");
-        });
 
-    books.forEach(function(book,index){
-        console.log("Book # " + (index +1));
-        console.log("Title: " + book.title);
-        console.log("Author: " + book.name.firstName + " " + book.name.lastName);
-        console.log("---");
-    });
+    books.push(createBook("cat's cradle", "Kurt", V));
+    //
+    //     var title = prompt("What is the title of your book?");
+    //     var firstName = prompt("What is the author's first name?");
+    //     var lastName = prompt("What is the author's last name?");
+    //
+    //
+    //     console.log(createBook());
+    //     books.forEach(function (book, index) {
+    //         console.log("Book # " + (index + 1));
+    //         console.log("Title: " + book.title);
+    //         console.log("Author: " + book.name.firstName + " " + book.name.lastName);
+    //         console.log("---");
+    //     });
+    //
+    // books.forEach(function(book,index){
+    //     console.log("Book # " + (index +1));
+    //     console.log("Title: " + book.title);
+    //     console.log("Author: " + book.name.firstName + " " + book.name.lastName);
+    //     console.log("---");
+    // });
 })();
