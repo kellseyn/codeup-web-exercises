@@ -42,20 +42,20 @@
      * represents one shopper. Use a foreach loop to iterate through the array,
      * and console.log the relevant messages for each person
      */
+    var shoppers = [
+        {name: 'Cameron', amount: 180},
+        {name: 'Ryan', amount: 250},
+        {name: 'George', amount: 320}
+    ];
 
-    function discountPrice(x){
-        var amount = x;
-        if (amount >= 200){
-            return amount - (amount * .12);
+    shoppers.forEach(function(shopper){
+        if (shopper.amount >= 200){
+            var total = shopper.amount - (shopper.amount * .12);
+            console.log (shopper.name + " owes a total of $" + total);
+        } else {
+            console.log(shopper.name + " owes a total of $" + shopper.amount);
         }
-        return amount;
-    }
-    console.log(discountPrice("Your total is $" + amount + "."));
-    // var shoppers = [
-    //     {name: 'Cameron', amount: 180},
-    //     {name: 'Ryan', amount: 250},
-    //     {name: 'George', amount: 320}
-    // ];
+    });
 
     /** TODO:
      * Create an array of objects that represent books and store it in a
@@ -69,6 +69,31 @@
      * > console.log(books[0].author.firstName) // "Douglas"
      * > console.log(books[0].author.lastName) // "Adams"
      */
+
+    var books = [
+        {title: "When the Bough Breaks",
+            name: {
+                firstName: "Jonathan",
+                lastName: "Kellerman"}},
+        {title: "To Kill a Mockingbird",
+            name: {
+                firstName: "Harper",
+                lastName: "Lee"}},
+        {title: "Flatland",
+            name: {
+                firstName: "Edwin",
+                lastName: "Abbott"}},
+        {title: "The Lord of the Rings Trilogy",
+            name: {
+                firstName: "J.R.R.",
+                lastName: "Tolkien"}},
+        {title: "A Christmas Carol",
+            name: {
+                firstName: "Charles",
+                lastName: "Dickens"}}
+     ];
+
+
 
     /**
      * TODO:
@@ -95,6 +120,14 @@
      *      ...
      */
 
+    console.log(books);
+    books.forEach(function(book,index){
+        console.log("Book # " + (index +1));
+        console.log("Title: " + book.title);
+        console.log("Author: " + book.name.firstName + " " + book.name.lastName);
+        console.log("---");
+    });
+
     /**
      * Bonus:
      * - Create a function named `createBook` that accepts a title and author
@@ -106,4 +139,24 @@
      *   `showBookInfo` function.
      */
 
+    function createBook() {
+        var title = prompt("What is the title of your book?");
+        var firstName = prompt("What is the author's first name?");
+        var lastName = prompt("What is the author's last name?");
+
+    }
+        console.log(createBook());
+        books.forEach(function (book, index) {
+            console.log("Book # " + (index + 1));
+            console.log("Title: " + book.title);
+            console.log("Author: " + book.name.firstName + " " + book.name.lastName);
+            console.log("---");
+        });
+
+    books.forEach(function(book,index){
+        console.log("Book # " + (index +1));
+        console.log("Title: " + book.title);
+        console.log("Author: " + book.name.firstName + " " + book.name.lastName);
+        console.log("---");
+    });
 })();
