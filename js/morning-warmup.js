@@ -131,3 +131,13 @@ function arrLength(array){
        return false;
     }
     console.log(roundDown(10.8));
+
+//10/21 write a js function that counts from 1 up to the number that the user passes in .
+    function userNum(x){
+        for(var i = 1; i <= x; i++){
+            console.log(i);
+
+        }
+        return "Done counting";
+    }
+
