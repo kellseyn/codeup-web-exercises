@@ -8,20 +8,23 @@
         getArea: function () {
             // TODO: complete this method
             // hint: area = pi * radius^2
-            console.log(Math.PI * (circle.radius * circle.radius));
-            return Math.PI * (circle.radius * circle.radius); // TODO: return the proper value
+            var radSquared = circle.radius * circle.radius;
+            var area = radSquared * Math.PI;
+            console.log(area);
+            return area; // TODO: return the proper value
+
         },
 
         logInfo: function (doRounding) {
             // TODO: complete this method.
-            if(true){
-                console.log(Math.round(getArea));
+            if(doRounding === true){
+                console.log(Math.round(this.getArea()));
             } else {
 
                 // If doRounding is true, round the result to the nearest integer.
                 // Otherwise, output the complete value
 
-                console.log("Area of a circle with radius: " + this.radius + ", is: ");
+                console.log("Area of a circle with radius: " + this.getArea() + ", is: ");
             }
         }
     };
@@ -31,7 +34,7 @@
     circle.logInfo(false);
     console.log("Circle information rounded to the nearest whole number");
     circle.logInfo(true);
-
+    circle.getArea();
     console.log("=======================================================");
     // TODO: Change the radius of the circle to 5.
 
