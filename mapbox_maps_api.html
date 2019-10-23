@@ -75,7 +75,7 @@
     var foods = [
         {name: "Burger Boy", about: "Best burger in SA", location:"2323 N St Mary's St, San Antonio, TX 78212"},
         {name: "Whataburger", about:"Second best only to Burger Boy", location:"12806 I-35, Live Oak, TX 78233"},
-        {name: "Monster burgers and more", about:"A nice unorthodox burger... pizza burger", location:"5201 S Flores St, San Antonio, TX 78214"}
+        {name: "Monster burgers and more", about:"A nice unorthodox burger... monstrosities", location:"5201 S Flores St, San Antonio, TX 78214"}
     ];
 
     foods.forEach(function (food) {
@@ -84,7 +84,7 @@
         geocode(food.location, mapboxToken).then(function (results) {
             console.log(results);
             var popup = new mapboxgl.Popup()
-               .setText(food.name);
+               .setHTML(food.name + "<br>" + food.about);
 
             new mapboxgl.Marker()
                 .setLngLat(results)
