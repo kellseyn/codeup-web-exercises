@@ -141,3 +141,12 @@ function arrLength(array){
         return "Done counting";
     }
 
+//10/23 write a function called createPersonObject that takes in a name and an age and returns a person object containing name and age
+    function createPersonObject(name, age) {
+        var person = {};
+            person.name = name;
+            person.age = age;
+
+        return person;
+    }
+
