@@ -3,17 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <title>Mapbox API</title>
-
-    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.js'></script>
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.css' rel='stylesheet' />
-
+    <style>
+        #map {
+            /* the width and height may be set to any size */
+            width: 100%;
+            height: 700px;
+        }
+    </style>
 </head>
 <body>
+<h1>burgerbox</h1>
+
+
+<div id='map'></div>
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.js'></script>
+<script src="js/keys.js"></script>
+<script>
+    mapboxgl.accessToken = mapboxToken;
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v9',
+        zoom: 10,
+        center: [-98.487458, 29.447576]
+    });
+
+    function geocode(search, token) {
+        var baseUrl = 'https://api.mapbox.com';
+        var endPoint = '/geocoding/v5/mapbox.places/';
+        return fetch(baseUrl + endPoint + encodeURIComponent(search) + '.json' + "?" + 'access_token=' + token)
+            .then(function(res) {
+                return res.json();
+                // to get all the data from the request, comment out the following three lines...
+            }).then(function(data) {
+                return data.features[0].center;
+            });
+    }
+    var markerOptions = {
+        color: "rebeccapurple",
+        draggable: true
+    };
+
+        // var popup = new mapboxgl.Popup()
+        //     .setHTML("<p>Burger Boy<br> Burgers and shakes</p>")
+        //
+        // new mapboxgl.Marker()
+        //     .setLngLat([-98.487458, 29.447576])
+        //     .setPopup(popup)
+        //     .addTo(map);
+        //
+        //
+        // var whataPopup = new mapboxgl.Popup()
+        //     .setHTML("<p>Whataburger<br> Second best only to Burger boy</p>")
+        // new mapboxgl.Marker()
+        //     .setLngLat([-98.346919, 29.554925])
+        //     .setPopup(whataPopup)
+        //     .addTo(map);
+        //
+        //
+        // var monsterPopup = new mapboxgl.Popup()
+        //     .setLngLat([-98.498694, 29.374500])
+        //     .setHTML("<p>Monster burgers and more<br> A change of pace unorthodox burger... pizza burger</p>");
+        //
+        // new mapboxgl.Marker()
+        //     .setLngLat([-98.498694, 29.374500])
+        //     .setPopup(monsterPopup)
+        //     .addTo(map);
 
 
 
-<div id='map' style='width: 400px; height: 300px;'></div>
-<script src="js/mapbox-geocoder-utils.js">
+    var foods = [
+        {name: "Burger Boy", about: "Best burger in SA", location:"2323 N St Mary's St, San Antonio, TX 78212"},
+        {name: "Whataburger", about:"Second best only to Burger Boy", location:"12806 I-35, Live Oak, TX 78233"},
+        {name: "Monster burgers and more", about:"A nice unorthodox burger... pizza burger", location:"5201 S Flores St, San Antonio, TX 78214"}
+    ];
+
+    foods.forEach(function (food) {
+        var results = "results";
+        console.log(food);
+        geocode(food.location, mapboxToken).then(function (results) {
+            console.log(results);
+            var popup = new mapboxgl.Popup()
+               .setText(food.name);
+
+            new mapboxgl.Marker()
+                .setLngLat(results)
+                .setPopup(popup)
+                .addTo(map)
+        });
+        // console.log(food.name + " " + food.about + " " +  food.location);
+    });
+
+
+
 </script>
 
 </body>
