@@ -1,10 +1,6 @@
 "use strict";
 
-mapboxgl.accessToken = 'pk.eyJ1Ijoia2VsbHNleW4iLCJhIjoiY2syMmEwZHluMGp3djNucWN6NDlqYWM5cSJ9.LwI6JCbHxY7TabCDGaFlJg';
-var map = new mapboxgl.Map({
-    container: 'map',
-    style: 'mapbox://styles/mapbox/streets-v9'
-});
+
 
 // function geocode(search, token) {
 //     var baseUrl = 'https://api.mapbox.com';
