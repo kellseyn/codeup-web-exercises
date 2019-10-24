@@ -81,13 +81,13 @@ var ranNum = parseInt(prompt("Pick a number 1-10"));
 alert(ranNum > 5);
 
 //10/9 write a js function that returns hello there stranger or a string with input name.
-function helloThere(string = "stranger"){
-    return "Hello there " + string + ".";
-
-
-}
+// function helloThere(string = "stranger"){
+//     return "Hello there " + string + ".";
+//
+//
+// }
 var name = prompt("What is your name?");
-alert(helloThere(name));
+// alert(helloThere(name));
 
 
 //10/10 write a js function that accepts an array and returns the length of that array
@@ -149,4 +149,21 @@ function arrLength(array){
 
         return person;
     }
+//10/24 write a fizzbuzz in js
+    function fizzBuzz(num) {
+        var fizz = i % 3 === 0;
+        var buzz = i % 5 === 0;
+        for (var i = 1; i < num; i++) {
+            if (fizz && buzz) {
+                console.log("fizz buzz")
+            } else if (fizz) {
+                console.log("fizz")
+            } else if (buzz) {
+                console.log("buzz")
+            } else {
+            console.log(i)
+            }
+        }
+    }
+        console.log(100);
 
