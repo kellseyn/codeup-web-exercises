@@ -167,3 +167,12 @@ function arrLength(array){
     }
         console.log(100);
 
+//10/25 write a function that will return the number 5, but only when passed the string of "five"
+    function stringFive(x){
+        if(x === "five"){
+            return 5;
+        }
+    }
+    console.log(stringFive("five"));
+
+
