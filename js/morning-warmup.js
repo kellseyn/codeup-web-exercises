@@ -175,4 +175,50 @@ function arrLength(array){
     }
     console.log(stringFive("five"));
 
+//10/28 write a JS function that will return the shopping cart with the most oranges.
+
+var shoppingCarts = [
+    {
+        apples: 8,
+        bananas: 2,
+        oranges: 4,
+        grapes: 24
+    }, {
+        apples: 3,
+        bananas: 6,
+        oranges: 8,
+        grapes: 12
+    } , {
+        apples: 0,
+        bananas: 12,
+        oranges: 0,
+        grapes: 0
+    } , {
+        apples: 4,
+        bananas: 0,
+        oranges: 12,
+        grapes: 10
+    }
+];
+
+function mostOranges(carts){
+    var winner = carts[0];
+    carts.forEach(function (cart) {
+        if (cart.oranges > winner.oranges){
+            winner = cart;
+        }
+    });
+    return winner;
+}
+console.log(mostOranges(shoppingCarts));
+
+// shoppingCarts.forEach(function (cart) {
+//     var arr = [];
+//     if (cart.oranges > 5) {
+//         return arr;
+//     }
+// });
+
+
+
 
