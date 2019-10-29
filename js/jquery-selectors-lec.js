@@ -25,16 +25,18 @@ $(document).ready(function() {
 	// $('#some-id');
 
 	// TODO TOGETHER: Select the contents/html of the id 'book-welcome' and set equal to the variable 'contents'. Console.log the contents
+	// var contents = $('#book-welcome').html();
+    // console.log(contents);
 
-
-	// TODO TOGETHER: Change the background color of the id 'book-welcome'
-
+    // TODO TOGETHER: Change the background color of the id 'book-welcome'
+	$('#book-welcome').css('background-color', 'green');
 
 	// TODO: Select the contents/html of the id 'book-bundle-one' and set equal to the variable 'bookBundle'. Console.log the contents
+	var bookBundle = $('#book-bundle-one').html();
+    console.log(bookBundle);
 
-
-	// TODO: Change one css property of the id 'container'
-
+    // TODO: Change one css property of the id 'container'
+	$('#container').css('color', 'rebeccapurple');
 
 
 	/**********************************************
@@ -43,7 +45,7 @@ $(document).ready(function() {
 	// $('.some-class');
 
 	// TODO TOGETHER: Change the font size of all the .main-headings
-
+	$('.main-headings').css('font-size', '60px');
 
 	// TODO: Explore the following JS Bin example:
 	//  https://jsbin.com/topupe/1/edit?js,output
@@ -51,6 +53,7 @@ $(document).ready(function() {
 
 	// TODO BONUS: Add additional class names to the page, and practice changing the css or viewing the contents
 
+	$('#container').css('background-color', 'cyan');
 
 
 	/**********************************************
@@ -59,14 +62,14 @@ $(document).ready(function() {
 	//	$('tag_name')
 
 	// TODO TOGETHER: Change the background color of all paragraph tags
-
+	$('p').css('background-color','yellow');
 
 	// TODO: Explore the following JS Bin example:
 	//  https://jsbin.com/gayir/1/edit?js,output
 
 
 	// TODO BONUS: Add additional elements to the page, and practice changing the css or viewing the contents
-
+	$('ul').css({'list-style-type':'none','display': 'flex', 'justify-content': 'space-between', 'margin-right': '45px'});
 
 	/**********************************************
 	 * 			** MULTIPLE Selector **
@@ -75,7 +78,7 @@ $(document).ready(function() {
 
 
 	// TODO TOGETHER: Change the background color of id 'mystery-genre' and 'book-bundle-three' to red
-
+	$('#mystery-genre, #book-bundle-three').css('background-color','red');
 
 
 	// TODO: Explore the following JS Bin example:
@@ -83,7 +86,7 @@ $(document).ready(function() {
 
 
 	// TODO BONUS: Add additional elements to the page with ids and classes, and practice changing the css or viewing the contents
-
+	$('#romance-genre, #book-bundle-one').css('background-color', 'pink');
 
 	/**********************************************
 	 * 			** THE ALL Selector **
@@ -92,7 +95,7 @@ $(document).ready(function() {
 	// A common use is to put a border around every element to help see the layout of a page.
 
 	// TODO TOGETHER: Create a border around all elements
-
+	$('*').css('border','3px solid black')
 
 
 	// TODO: Explore the following JS Bin example:
