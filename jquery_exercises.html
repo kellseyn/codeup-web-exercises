@@ -5,11 +5,11 @@
     <title>Title</title>
 </head>
 <body>
-    <div id="container">
-        <h1>Welcome to Codeup</h1>
+    <div id="container" class="codeup">
+        <h1 id="codeup">Welcome to Codeup</h1>
         <p>This is where we learn Jquery</p>
 
-        <div id="cats" class="listings">
+        <div id="cats" class="listings codeup">
             <p>My cats</p>
             <ul>
                 <li>Pocky</li>
@@ -24,9 +24,11 @@
 <script src="js/jquery-2.2.4.js"></script>
 <script>
     $(document).ready(function () {
-        $('#cats').ready(function(){
-            alert('cats');
-        });
+        // $('#cats').ready(function(){
+        //     alert('cats');
+        // });
+
+        $('.codeup').css('border', '1px solid red');
 
 
 
