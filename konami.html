@@ -29,12 +29,22 @@
             if (konamiCodePosition === konamiCode.length) {
                 $('h1').html('You unlocked DOGE!');
                 $('#game-zone').html("<img src='img/dogecode.jpg'>");
+                $('img').click(function () {
+                    $(this).slideUp();
+                    $('h1').html('Just Joking');
+                    $('h1').dblclick(function () {
+                        $(this).html('Instead... a dancing pumpkin!');
+                        $('#game-zone').html("<img src='img/dancing-pumpkin-man.gif'>")
+                    })
+                });
+
                 restart();
             }
         } else {
             konamiCodePosition = 0;
         }
     });
+    var doge = [];
 
 </script>
 </body>
