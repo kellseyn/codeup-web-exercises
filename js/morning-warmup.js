@@ -221,44 +221,90 @@ console.log(mostOranges(shoppingCarts));
 
 //10/29 write a js function that accepts an array of student objects that are not registered for class
 
-function checkRegistration(x){
-    var bucket = [];
-    var students = [
-        {
-            name: "Mary",
-            grade: 10,
-            gpa: 3.7,
-            isRegistered: true
-        },
-        {
-            name: "Tim",
-            grade: 12,
-            gpa: 3.2,
-            isRegistered: false
-        },
-        {
-            name: "Ellie",
-            grade: 9,
-            gpa: 4.0,
-            isRegistered: false
-        },
-        {
-            name: "Alex",
-            grade: 10,
-            gpa: 3.9,
-            isRegistered: true
-        }
-    ];
+// function checkRegistration(x){
+//     var bucket = [];
+//     var students = [
+//         {
+//             name: "Mary",
+//             grade: 10,
+//             gpa: 3.7,
+//             isRegistered: true
+//         },
+//         {
+//             name: "Tim",
+//             grade: 12,
+//             gpa: 3.2,
+//             isRegistered: false
+//         },
+//         {
+//             name: "Ellie",
+//             grade: 9,
+//             gpa: 4.0,
+//             isRegistered: false
+//         },
+//         {
+//             name: "Alex",
+//             grade: 10,
+//             gpa: 3.9,
+//             isRegistered: true
+//         }
+//     ];
+//
+//     studentArray.forEach(function (studentArray) {
+//         if (!student.isRegistered) {
+//             bucket.push(student);
+//         }
+//     });
+//     return bucket;
+// }
+//
+// console.log(checkRegistration(student));
 
-    studentArray.forEach(function (studentArray) {
-        if (!student.isRegistered) {
-            bucket.push(student);
-        }
+//10/30 write a js function that will return an array of hamster objects sorted by height in ascending order
+
+var hamsters = [
+    {
+        name: "Hamtaro",
+        heightInMM: 86,
+        fur: ['orange', 'white'],
+        gender: "male",
+        dateOfBirth: "August 6"
+    }, {
+        name: "Bijou",
+        heightInMM: 75,
+        fur: ['white'],
+        gender: "female",
+        dateOfBirth: "July 10"
+    }, {
+        name: "Oxnard",
+        heightInMM: 100,
+        fur: ['grey', 'white'],
+        gender: "male",
+        dateOfBirth: "May 3"
+    }, {
+        name: "Boss",
+        heightInMM: 120,
+        fur: ['brown', 'white'],
+        gender: "male",
+        dateOfBirth: "Spetember 21"
+    }, {
+        name: "Snoozer",
+        heightInMM: 85,
+        fur: ['brown', 'white', "pink"],
+        gender: "male",
+        dateOfBirth: "January 14"
+    }
+];
+
+function heightOrder(hamHams) {
+    var bucket = [];
+    hamHams.sort(function (a, b) {
+        return a.heightInMM - b.heightInMM;
     });
-    return bucket;
 }
 
-console.log(checkRegistration(student));
+console.log(heightOrder(hamsters));
+
 
 
 
