@@ -4,11 +4,16 @@
     <title>Konami Code</title>
 </head>
 <body>
+
 <h1>Nothing to see here...</h1>
 
 <div id="game-zone">
+</div>
+<div id="second">
 
 </div>
+
+<h2></h2>
 
 <script src="js/jquery-2.2.4.js"></script>
 <script>
@@ -16,11 +21,15 @@
 
     var konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'KeyB', 'KeyA', 'Enter'];
     var konamiCodePosition = 0;
+    var kellsCode = ['ArrowUp', 'ArrowRight', 'ArrowDown', 'ArrowLeft', 'ArrowUp', 'ArrowRight', 'ArrowDown', 'ArrowLeft','Enter'];
+    var kellsCodePosition = 0;
 
     function restart() {
         konamiCodePosition = 0;
+        kellsCodePosition = 0;
         return true;
     }
+
     $(document).on('keydown', function(e) {
         var key = e.originalEvent.code;
         var requiredKey = konamiCode[konamiCodePosition];
@@ -34,17 +43,47 @@
                     $('h1').html('Just Joking');
                     $('h1').dblclick(function () {
                         $(this).html('Instead... a dancing pumpkin!');
-                        $('#game-zone').html("<img src='img/dancing-pumpkin-man.gif'>")
-                    })
+                        $('#game-zone').html("<img src='img/dancing-pumpkin-man.gif'>");
+                        $('h2').html('Click here!');
+                        $('h2').css('color', 'white');
+                        $('h2').hover(
+                            function() {
+                                $(this).css('color', 'blue');
+                            },
+                            function(){
+                                $(this).css('color', 'white');
+                            });
+                            $('h2').click(function () {
+                                $(this).html('Oh no! YOU broke it!');
+                            });
+                            $('h2').css('color','blue');
+                    });
                 });
-
                 restart();
             }
         } else {
             konamiCodePosition = 0;
         }
     });
-    var doge = [];
+
+    $(document).on('keyup', function(e) {
+        var key2 = e.originalEvent.code;
+        var requiredKey2 = kellsCode[kellsCodePosition];
+        if (key2 === requiredKey2) {
+            kellsCodePosition += 1;
+            console.log(kellsCodePosition);
+            if (kellsCodePosition === kellsCode.length) {
+                $('h1').html('TADA!');
+                $('h1').css('color','white');
+                $('#game-zone').html('<img src="img/soraaa.gif">');
+                $('body').click(function () {
+                    $(this).css('background','black');
+                })
+            }
+        } else {
+            kellsCodePosition = 0;
+        }
+    });
 
 </script>
 </body>
