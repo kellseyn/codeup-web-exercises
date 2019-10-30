@@ -4,8 +4,9 @@
     <title>Konami Code</title>
 </head>
 <body>
-<h1>Konami Code</h1>
-<div id="game-area">
+<h1>Nothing to see here...</h1>
+
+<div id="game-zone">
 
 </div>
 
@@ -13,16 +14,28 @@
 <script>
     "use strict";
 
-    $(document).keyup(function(event){
-        var code = event.keyCode;
-        console.log(code);
-        
-        if (event === konami){
-            alert("You gained 30 lives!");
+    var konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'KeyB', 'KeyA', 'Enter'];
+    var konamiCodePosition = 0;
+
+    function restart() {
+        konamiCodePosition = 0;
+        return true;
+    }
+    $(document).on('keydown', function(e) {
+        var key = e.originalEvent.code;
+        var requiredKey = konamiCode[konamiCodePosition];
+        if (key === requiredKey) {
+            konamiCodePosition++;
+            if (konamiCodePosition === konamiCode.length) {
+                $('h1').html('You unlocked DOGE!');
+                $('#game-zone').html("<img src='img/dogecode.jpg'>");
+                restart();
+            }
+        } else {
+            konamiCodePosition = 0;
         }
     });
 
-    var konami = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a', 'Enter']
 </script>
 </body>
 </html>
