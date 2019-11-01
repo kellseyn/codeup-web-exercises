@@ -83,9 +83,9 @@
                 $(this).css('background', 'yellow');
             });
             $('#btn').click(function () {
-                $('#first').parent.children('li').last().css('background-color', '#FF0');
-                $('#second').children().last().css('background-color', '#FF0');
-                $('#third').children().last().css('background-color', '#FF0');
+                $('ul').each(function () {
+                    $(this).children().last().css('background-color','yellow')
+                })
             });
             $('h3').click(function () {
                $(this).parent().children('li').first().css('font-weight', 'bold');
