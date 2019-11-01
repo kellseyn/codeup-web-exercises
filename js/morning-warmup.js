@@ -305,6 +305,9 @@ function heightOrder(hamHams) {
 
 console.log(heightOrder(hamsters));
 
+//11/1 3 fave web apps
+"twitter, aesthetically pleasing, discord, clean and easy accessibility, fanfiction, desktop feel even in mobile very easy to use settings"
+
 
 
 
