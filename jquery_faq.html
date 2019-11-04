@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Parks FAQ</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <style>
         .invisible{
             visibility: hidden;
@@ -10,6 +11,15 @@
     </style>
 </head>
 <body>
+<div class="alert alert-success alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <strong>Welcome,</strong> Here's some FAQS and facts about our national parks!
+</div>
+<div id="signup">
+    <h1>Would you like to sign up for our newsletter?</h1>
+    <span>X</span>
+</div>
+    <h2>Please Register</h2>
     <dl>
         <dt>Who is the director of the National Park Service?</dt>
         <dd class="invisible hidden">David Vela is the Deputy Director, exercising the authority of the Director of the National Park Service.</dd>
@@ -69,12 +79,15 @@
         <li>The park is located in the Sierra Nevada Mountains.</li>
     </ul>
 
-    <button id="btn">Click here!</button>
-
     <script src="js/jquery-2.2.4.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script>
         "use strict";
         $(document).ready(function() {
+            $('li').hide();
+            $('h2').hide();
+            $('h2').delay(8000).fadeIn();
             $('#highlight-important').click(function(event) {
                 event.preventDefault();
                 $('.hidden').toggleClass('invisible');
@@ -82,17 +95,26 @@
             $('dt').click(function(event) {
                 $(this).css('background', 'yellow');
             });
-            $('#btn').click(function () {
-                $('ul').each(function () {
-                    $(this).children().last().css('background-color','yellow')
-                })
-            });
+
             $('h3').click(function () {
                $(this).parent().children('li').first().css('font-weight', 'bold');
             });
             $('li').click(function () {
                 $(this).parent().children('li').first().css('color', 'blue');
             });
+            $('span').click(function () {
+                $(this).parent().hide();
+            });
+            $('h3').click(function () {
+                $('li').each(function () {
+                    $(this).slideToggle();
+                    $('ul').each(function () {
+                        $(this).children().last().css('background-color','yellow')
+                    });
+                });
+            });
+
+
         });
      </script>
 </body>

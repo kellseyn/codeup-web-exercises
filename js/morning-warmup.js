@@ -306,8 +306,41 @@ function heightOrder(hamHams) {
 console.log(heightOrder(hamsters));
 
 //11/1 3 fave web apps
-"twitter, aesthetically pleasing, discord, clean and easy accessibility, fanfiction, desktop feel even in mobile very easy to use settings"
+console.log("twitter, aesthetically pleasing, discord, clean and easy accessibility, fanfiction, desktop feel even in mobile very easy to use settings");
+
+//11/4 write a javascript function that will take in the whole numbers 1-10 and return the number spelled out as a string
+function numberToWord(num){
+   switch (num){
+       case 1:
+           return 'one';
+       case 2:
+           return 'two';
+       case 3:
+           return 'three';
+       case 4:
+           return 'four';
+       case 5:
+           return 'five';
+       case 6:
+           return 'six';
+       case 7:
+           return 'seven';
+       case 8:
+           return 'eight';
+       case 9:
+           return 'nine';
+       case 10:
+           return 'ten';
+       default :
+           return false;
+   }
+
+}
 
 
+var randoNum = Math.floor(Math.random()* 10) + 1;
+
+
+console.log(numberToWord(randoNum));
 
 
