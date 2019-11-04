@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div class="container">
+        <div class="main">
+            <!-- Where input total bill -->
+
+            <label for="bill-amount">Bill Amount:</label>
+            <input type="text" id="bill-amount">
+            <!--  quick action buttons for percentages -->
+            <button id="ten">10%</button>
+            <button id="fifteen">15%</button>
+            <button id="twenty">20%</button>
+            <!--  input for custom percentage -->
+            <label for="custom">Enter a percentage:</label>
+            <input type="number" id="custom">
+
+            <button type="submit" id="calculate">Calculate</button>
+
+            <div id="output">
+
+            </div>
+        </div>
+    </div>
+
+<script src="js/jquery-2.2.4.js"></script>
+<script>
+    "use strict";
+    $(document).ready(function () {
+        function calculateTip(total, tip){
+            return parseFloat(total) + (total * tip/100);
+        }
+
+
+
+        $('#calculate').click(function () {
+            var billAmount = $('bill-amount').val();
+            var customPercent = $('custom').val();
+            console.log(billAmount, customPercent);
+        })
+    });
+</script>
+
+</body>
+</html>
