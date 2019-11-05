@@ -343,4 +343,23 @@ var randoNum = Math.floor(Math.random()* 10) + 1;
 
 console.log(numberToWord(randoNum));
 
+//11/5 Write a JS function that will return "You're welcome" but only when passed a JS object with a property of gratitude that has the value of "Thank you"
+
+var whatYouSay = [
+    {
+    gratitude: "Thank you"
+    },{
+    gratitude: "Thanks"
+    },{
+    gratitude: "Dueces"
+    }
+];
+function response(obj){
+    if (obj.gratitude === "Thank you"){
+        return "You're Welcome"
+    }
+}
+
+console.log(response());
+
 
