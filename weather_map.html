@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather map</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        body{
+            background-color: plum;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div id="header">
+            <h1>Weather Application</h1>
+        </div>
+        <div id="city">
+            <h2>Placeholder</h2>
+        </div>
+        <div class="weather-boxes mt-5 d-flex justify-content-center">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title"></h5>
+                    <h6 class="card-subtitle mb-2"></h6>
+                    <h6 class="card-subtitle mb-2"></h6>
+                    <h6 class="card-subtitle mb-2"></h6>
+                    <h6 class="card-subtitle mb-2"></h6>
+                    <p class="card-text"></p>
+                    <!--<a href="#" class="card-link">Card link</a>-->
+                    <!--<a href="#" class="card-link">Another link</a>-->
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title"></h5>
+                    <h6 class="card-subtitle mb-2"></h6>
+                    <h6 class="card-subtitle mb-2"></h6>
+                    <h6 class="card-subtitle mb-2"></h6>
+                    <h6 class="card-subtitle mb-2"></h6>
+                    <p class="card-text"></p>
+                    <!--<a href="#" class="card-link">Card link</a>-->
+                    <!--<a href="#" class="card-link">Another link</a>-->
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title"></h5>
+                    <h6 class="card-subtitle mb-2"></h6>
+                    <h6 class="card-subtitle mb-2"></h6>
+                    <h6 class="card-subtitle mb-2"></h6>
+                    <h6 class="card-subtitle mb-2"></h6>
+                    <p class="card-text"></p>
+                    <!--<a href="#" class="card-link">Card link</a>-->
+                    <!--<a href="#" class="card-link">Another link</a>-->
+                </div>
+            </div>
+        </div>
+        <div id="search-bar">
+
+        </div>
+    </div>
+
+
+
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.js'></script>
+<script src="js/jquery-2.2.4.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="js/keys.js"></script>
+<script>
+    $(document).ready(function () {
+        "use strict";
+        var weatherLink = $.ajax("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/" + darkSkyKey + "/29.4241,-98.4936");
+        weatherLink.done(function(x) {
+            console.log(x.daily.data);
+            $.each(x.daily.data ,function (index, data) {
+                if (x.daily.data === 3){
+                    return false
+                }
+                    var content = "<h5>";
+                    content += data.temperatureHigh + "/" + data.temperatureLow;
+                    content += "</h5>";
+                    content += "<h6>";
+                    content += data.icon;
+                    content += "</h6>";
+                    content += "<h6>";
+                    content += data.humidity;
+                    content += "</h6>";
+                    content += "<h6>";
+                    content += data.windSpeed;
+                    content += "</h6>";
+                    content += "<h6>";
+                    content += data.pressure;
+                    content += "</h6>";
+
+                    console.log(data.temperatureHigh);
+                    $(".card-body").append(content);
+                });
+            });
+        });
+        weatherLink.fail(function () {
+            console.log("Something went wrong");
+        });
+
+
+</script>
+</body>
+</html>
