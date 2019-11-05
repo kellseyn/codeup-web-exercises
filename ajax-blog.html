@@ -2,16 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>My blog</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <style>
         .container{
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: 1fr;
+            grid-template-columns: 1fr;
         }
         .jumbotron{
             background-image: url("img/nyan-cat.jpg");
 
+        }
+        .blog{
+            padding: 15px;
+            padding-top: 0;
         }
 
     </style>
@@ -19,11 +24,11 @@
 <body>
 <div class="jumbotron jumbotron-fluid">
     <div class="container text-white">
-        <h1 class="display-2 text-white">My ipsum Blerg</h1>
+        <h1 class="display-2 text-white">My ipsum Blog</h1>
     </div>
 </div>
 <div class="container">
-    <div id="posts" class="col-12"></div>
+    <div id="posts" class=" d-flex"></div>
 </div>
 
 
@@ -41,7 +46,8 @@ $(document).ready(function () {
         blogs.done(function (data) {
             console.log(data);
             $.each(data, function (index, blog) {
-                var content = "<h1>";
+                var content = "<div class='blog'>";
+                content += "<h1>";
                 content += blog.title;
                 content += "</h1>";
                 content += "<p>";
@@ -52,7 +58,9 @@ $(document).ready(function () {
                 content += "</h5>";
                 content += "<h6>";
                 content += blog.date;
-                content += "</h6>";
+                content += "</h6><br>";
+                content += "</div>";
+
                 $('#posts').append(content);
                 console.log(blog);
             });
