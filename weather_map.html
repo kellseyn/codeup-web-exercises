@@ -15,7 +15,7 @@
              /* the width and height may be set to any size */
              width: 95%;
              height: 500px;
-             padding-left: 71px;
+             margin-left: 35px;
         }
         h1, h2{
             font-family: 'Bowlby One SC', cursive;
@@ -116,19 +116,20 @@
                     var content = "<div class=\"card\" style=\"width: 18rem;\">";
                     content += "<div class='card-body'>";
                     content += "<h5>";
-                    content += data.temperatureHigh + "/" + data.temperatureLow;
+                    content += "<strong>" + data.temperatureHigh + " / " + data.temperatureLow + "</strong>";
                     content += "</h5>";
                     content += "<h6>";
                     content += data.icon;
                     content += "</h6>";
+                    content += " <img src= 'icon/" + data.icon + ".svg'";
                     content += "<h6>";
-                    content += data.humidity;
+                    content += "Humidity: " + data.humidity;
                     content += "</h6>";
                     content += "<h6>";
-                    content += data.windSpeed;
+                    content += "Wind: " + data.windSpeed;
                     content += "</h6>";
                     content += "<h6>";
-                    content += data.pressure;
+                    content += "Pressure: " + data.pressure;
                     content += "</h6>";
                     content += "</div>";
                     content += "</div>";
@@ -162,18 +163,6 @@
             .setLngLat([-98.4861, 29.4260])
             .addTo(map);
 
-
-        var weatherCondition = [
-            {condition: clear-day,
-                property:{
-                        url("icons/SVG/Sun.svg")}},
-            {condition: clear-night,
-                property:{
-                        url("icons/SVG/Moon.svg")}},
-            {condition: rain,
-                property:{
-                        url("icons/SVG/Cloud-Rain-Alt.svg")}},
-            ];
     });
 
 </script>
