@@ -10,11 +10,12 @@
         body{
             background-color: plum;
             font-family: 'Ubuntu', sans-serif;
+
         }
         #map {
              /* the width and height may be set to any size */
              width: 95%;
-             height: 500px;
+             height: 490px;
              margin-left: 35px;
         }
         h1, h2{
@@ -39,61 +40,21 @@
         </div>
 
         <div id="city">
-            <h2>Placeholder</h2>
+            <h2></h2>
         </div>
-
 
         <div class="weather-boxes d-flex justify-content-center">
-            <!--<div class="card" style="width: 18rem;">-->
-                <!--&lt;!&ndash;<div class="card-body">&ndash;&gt;-->
-                    <!--<h5 class="card-title"></h5>-->
-                    <!--<h6 class="card-subtitle mb-2"></h6>-->
-                    <!--<h6 class="card-subtitle mb-2"></h6>-->
-                    <!--<h6 class="card-subtitle mb-2"></h6>-->
-                    <!--<h6 class="card-subtitle mb-2"></h6>-->
-                    <!--<p class="card-text"></p>-->
-                    <!--&lt;!&ndash;<a href="#" class="card-link">Card link</a>&ndash;&gt;-->
-                    <!--&lt;!&ndash;<a href="#" class="card-link">Another link</a>&ndash;&gt;-->
-                <!--&lt;!&ndash;</div>&ndash;&gt;-->
-            <!--</div>-->
-            <!--<div class="card" style="width: 18rem;">-->
-                <!--&lt;!&ndash;<div class="card-body">&ndash;&gt;-->
-                    <!--<h5 class="card-title"></h5>-->
-                    <!--<h6 class="card-subtitle mb-2"></h6>-->
-                    <!--<h6 class="card-subtitle mb-2"></h6>-->
-                    <!--<h6 class="card-subtitle mb-2"></h6>-->
-                    <!--<h6 class="card-subtitle mb-2"></h6>-->
-                    <!--<p class="card-text"></p>-->
-                    <!--&lt;!&ndash;<a href="#" class="card-link">Card link</a>&ndash;&gt;-->
-                    <!--&lt;!&ndash;<a href="#" class="card-link">Another link</a>&ndash;&gt;-->
-                <!--&lt;!&ndash;</div>&ndash;&gt;-->
-            <!--</div>-->
-            <!--<div class="card" style="width: 18rem;">-->
-                <!--&lt;!&ndash;<div class="card-body">&ndash;&gt;-->
-                    <!--<h5 class="card-title"></h5>-->
-                    <!--<h6 class="card-subtitle mb-2"></h6>-->
-                    <!--<h6 class="card-subtitle mb-2"></h6>-->
-                    <!--<h6 class="card-subtitle mb-2"></h6>-->
-                    <!--<h6 class="card-subtitle mb-2"></h6>-->
-                    <!--<p class="card-text"></p>-->
-                    <!--&lt;!&ndash;<a href="#" class="card-link">Card link</a>&ndash;&gt;-->
-                    <!--&lt;!&ndash;<a href="#" class="card-link">Another link</a>&ndash;&gt;-->
-                <!--&lt;!&ndash;</div>&ndash;&gt;-->
-            <!--</div>-->
         </div>
-
 
         <div id="map">
         </div>
 
-
         <div class="input-group md-form form-sm form-1 pl-0">
             <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-text1"><i class="fas fa-search text-white" aria-hidden="true"></i></span>
+                <button class="input-group-text" id="fly"><i class="fas fa-search text-white" aria-hidden="true"></i></button>
             </div>
             <input class="form-control my-0 py-1" type="text" placeholder="Search" aria-label="Search">
         </div>
-
 
     </div>
 
@@ -104,15 +65,22 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <script src="https://kit.fontawesome.com/a45b30c254.js" crossorigin="anonymous"></script>
+<script src="js/mapbox-geocoder-utils.js"></script>
 <script src="js/keys.js"></script>
 <script>
     $(document).ready(function () {
         "use strict";
-        var weatherLink = $.ajax("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/" + darkSkyKey + "/29.4241,-98.4936");
-        weatherLink.done(function(x) {
-            console.log(x.daily.data);
-            $.each(x.daily.data ,function (index, data) {
 
+        <!-- DARKSKY API  -->
+        var defaultLat = 29.4241;
+        var defaultLong = -98.4936;
+
+        function callWeather(long, lat) {
+            var weatherLink = $.ajax("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/" + darkSkyKey + "/" + defaultLat + "," + defaultLong);
+            weatherLink.done(function (x) {
+                console.log(x.daily.data);
+                $.each(x.daily.data, function (index, data) {
+                    var forecast = "<div class='card-img'><img src= 'icon/" + data.icon + ".svg'</div>";
                     var content = "<div class=\"card\" style=\"width: 18rem;\">";
                     content += "<div class='card-body'>";
                     content += "<h5>";
@@ -121,7 +89,7 @@
                     content += "<h6>";
                     content += data.icon;
                     content += "</h6>";
-                    content += " <img src= 'icon/" + data.icon + ".svg'";
+                    content += forecast;
                     content += "<h6>";
                     content += "Humidity: " + data.humidity;
                     content += "</h6>";
@@ -134,35 +102,78 @@
                     content += "</div>";
                     content += "</div>";
 
-                    console.log(data.temperatureHigh);
                     $(".weather-boxes").append(content);
 
-                // if (x.daily.data[i].length > 2){
-                //     return false;
-                // }
                 });
             });
 
-        weatherLink.fail(function (x) {
-            console.log("Something went wrong");
-        });
+            weatherLink.fail(function (x) {
+                console.log("Something went wrong");
+            });
+        }
+        callWeather();
+
+        <!-- MAPBOX API  -->
 
         mapboxgl.accessToken = mapboxToken;
         var map = new mapboxgl.Map({
             container: 'map',
             style: 'mapbox://styles/mapbox/dark-v9',
-            zoom: 10,
-            center: [-98.4916, 29.4252]
-        });
+            zoom: 8,
+            center: [defaultLong, defaultLat]
+         });
         var markerOptions = {
             color: "#f00",
             draggable: true
         };
 
         var marker = new mapboxgl.Marker(markerOptions)
-            .setLngLat([-98.4861, 29.4260])
+            .setLngLat([defaultLong, defaultLat])
             .addTo(map);
 
+        // var coordinates = document.getElementById('coordinates');
+
+        function onDragEnd() {
+            var lngLat = marker.getLngLat();
+            defaultLong = parseFloat(lngLat.lng);
+            defaultLat = parseFloat(lngLat.lat);
+            // coordinates.style.display = 'block';
+            // coordinates.innerHTML = 'Longitude: ' + lngLat.lng + '<br />Latitude: ' + lngLat.lat;
+            $(".weather-boxes").empty();
+            callWeather(defaultLong,defaultLat);
+        }
+
+        marker.on('dragend', onDragEnd);
+
+
+        // $(".input-group-text").click(function () {
+        //     var search = $(".form-control").val();
+        //     geocode(search, mapboxToken).then(function (result) {
+        //         defaultLong = result[1];
+        //         defaultLat = result[0];
+        //         callWeather(defaultLong,defaultLat);
+        //     });
+        //
+        // });
+
+        $("#fly").click(function () {
+            var search = $(".form-control").val();
+            geocode(search, mapboxToken).then(function (result) {
+
+
+                defaultLong = result[0];
+                defaultLat = result[1];
+                map.flyTo({
+                    center:[
+                        defaultLong,
+                        defaultLat
+                    ]
+                });
+            });
+
+        $(".weather-boxes").empty();
+        callWeather();
+        });
     });
 
 </script>
