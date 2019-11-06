@@ -3,63 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <title>Weather map</title>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Bowlby+One+SC|Ubuntu&display=swap" rel="stylesheet">
     <style>
         body{
             background-color: plum;
+            font-family: 'Ubuntu', sans-serif;
         }
+        #map {
+             /* the width and height may be set to any size */
+             width: 95%;
+             height: 500px;
+             padding-left: 71px;
+        }
+        h1, h2{
+            font-family: 'Bowlby One SC', cursive;
+            text-shadow: 2px 2px cyan;
+        }
+        .input-group-text{
+            background-color: cyan;
+        }
+        .card-body{
+            text-align: center;
+        }
+
 
     </style>
 </head>
 <body>
     <div id="main">
+
         <div id="header">
             <h1>Weather Application</h1>
         </div>
+
         <div id="city">
             <h2>Placeholder</h2>
         </div>
-        <div class="weather-boxes mt-5 d-flex justify-content-center">
-            <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                    <h5 class="card-title"></h5>
-                    <h6 class="card-subtitle mb-2"></h6>
-                    <h6 class="card-subtitle mb-2"></h6>
-                    <h6 class="card-subtitle mb-2"></h6>
-                    <h6 class="card-subtitle mb-2"></h6>
-                    <p class="card-text"></p>
-                    <!--<a href="#" class="card-link">Card link</a>-->
-                    <!--<a href="#" class="card-link">Another link</a>-->
-                </div>
-            </div>
-            <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                    <h5 class="card-title"></h5>
-                    <h6 class="card-subtitle mb-2"></h6>
-                    <h6 class="card-subtitle mb-2"></h6>
-                    <h6 class="card-subtitle mb-2"></h6>
-                    <h6 class="card-subtitle mb-2"></h6>
-                    <p class="card-text"></p>
-                    <!--<a href="#" class="card-link">Card link</a>-->
-                    <!--<a href="#" class="card-link">Another link</a>-->
-                </div>
-            </div>
-            <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                    <h5 class="card-title"></h5>
-                    <h6 class="card-subtitle mb-2"></h6>
-                    <h6 class="card-subtitle mb-2"></h6>
-                    <h6 class="card-subtitle mb-2"></h6>
-                    <h6 class="card-subtitle mb-2"></h6>
-                    <p class="card-text"></p>
-                    <!--<a href="#" class="card-link">Card link</a>-->
-                    <!--<a href="#" class="card-link">Another link</a>-->
-                </div>
-            </div>
-        </div>
-        <div id="search-bar">
 
+
+        <div class="weather-boxes d-flex justify-content-center">
+            <!--<div class="card" style="width: 18rem;">-->
+                <!--&lt;!&ndash;<div class="card-body">&ndash;&gt;-->
+                    <!--<h5 class="card-title"></h5>-->
+                    <!--<h6 class="card-subtitle mb-2"></h6>-->
+                    <!--<h6 class="card-subtitle mb-2"></h6>-->
+                    <!--<h6 class="card-subtitle mb-2"></h6>-->
+                    <!--<h6 class="card-subtitle mb-2"></h6>-->
+                    <!--<p class="card-text"></p>-->
+                    <!--&lt;!&ndash;<a href="#" class="card-link">Card link</a>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<a href="#" class="card-link">Another link</a>&ndash;&gt;-->
+                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+            <!--</div>-->
+            <!--<div class="card" style="width: 18rem;">-->
+                <!--&lt;!&ndash;<div class="card-body">&ndash;&gt;-->
+                    <!--<h5 class="card-title"></h5>-->
+                    <!--<h6 class="card-subtitle mb-2"></h6>-->
+                    <!--<h6 class="card-subtitle mb-2"></h6>-->
+                    <!--<h6 class="card-subtitle mb-2"></h6>-->
+                    <!--<h6 class="card-subtitle mb-2"></h6>-->
+                    <!--<p class="card-text"></p>-->
+                    <!--&lt;!&ndash;<a href="#" class="card-link">Card link</a>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<a href="#" class="card-link">Another link</a>&ndash;&gt;-->
+                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+            <!--</div>-->
+            <!--<div class="card" style="width: 18rem;">-->
+                <!--&lt;!&ndash;<div class="card-body">&ndash;&gt;-->
+                    <!--<h5 class="card-title"></h5>-->
+                    <!--<h6 class="card-subtitle mb-2"></h6>-->
+                    <!--<h6 class="card-subtitle mb-2"></h6>-->
+                    <!--<h6 class="card-subtitle mb-2"></h6>-->
+                    <!--<h6 class="card-subtitle mb-2"></h6>-->
+                    <!--<p class="card-text"></p>-->
+                    <!--&lt;!&ndash;<a href="#" class="card-link">Card link</a>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<a href="#" class="card-link">Another link</a>&ndash;&gt;-->
+                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+            <!--</div>-->
         </div>
+
+
+        <div id="map">
+        </div>
+
+
+        <div class="input-group md-form form-sm form-1 pl-0">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-text1"><i class="fas fa-search text-white" aria-hidden="true"></i></span>
+            </div>
+            <input class="form-control my-0 py-1" type="text" placeholder="Search" aria-label="Search">
+        </div>
+
+
     </div>
 
 
@@ -68,6 +103,7 @@
 <script src="js/jquery-2.2.4.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/a45b30c254.js" crossorigin="anonymous"></script>
 <script src="js/keys.js"></script>
 <script>
     $(document).ready(function () {
@@ -76,10 +112,10 @@
         weatherLink.done(function(x) {
             console.log(x.daily.data);
             $.each(x.daily.data ,function (index, data) {
-                if (x.daily.data === 3){
-                    return false
-                }
-                    var content = "<h5>";
+
+                    var content = "<div class=\"card\" style=\"width: 18rem;\">";
+                    content += "<div class='card-body'>";
+                    content += "<h5>";
                     content += data.temperatureHigh + "/" + data.temperatureLow;
                     content += "</h5>";
                     content += "<h6>";
@@ -94,16 +130,51 @@
                     content += "<h6>";
                     content += data.pressure;
                     content += "</h6>";
+                    content += "</div>";
+                    content += "</div>";
 
                     console.log(data.temperatureHigh);
-                    $(".card-body").append(content);
+                    $(".weather-boxes").append(content);
+
+                // if (x.daily.data[i].length > 2){
+                //     return false;
+                // }
                 });
             });
-        });
-        weatherLink.fail(function () {
+
+        weatherLink.fail(function (x) {
             console.log("Something went wrong");
         });
 
+        mapboxgl.accessToken = mapboxToken;
+        var map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/dark-v9',
+            zoom: 10,
+            center: [-98.4916, 29.4252]
+        });
+        var markerOptions = {
+            color: "#f00",
+            draggable: true
+        };
+
+        var marker = new mapboxgl.Marker(markerOptions)
+            .setLngLat([-98.4861, 29.4260])
+            .addTo(map);
+
+
+        var weatherCondition = [
+            {condition: clear-day,
+                property:{
+                        url("icons/SVG/Sun.svg")}},
+            {condition: clear-night,
+                property:{
+                        url("icons/SVG/Moon.svg")}},
+            {condition: rain,
+                property:{
+                        url("icons/SVG/Cloud-Rain-Alt.svg")}},
+            ];
+    });
 
 </script>
 </body>
