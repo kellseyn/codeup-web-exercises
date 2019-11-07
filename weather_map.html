@@ -13,7 +13,6 @@
 
         }
         #map {
-             /* the width and height may be set to any size */
              width: 95%;
              height: 490px;
              margin-left: 35px;
@@ -28,8 +27,6 @@
         .card-body{
             text-align: center;
         }
-
-
     </style>
 </head>
 <body>
@@ -71,15 +68,17 @@
     $(document).ready(function () {
         "use strict";
 
-        <!-- DARKSKY API  -->
+        <!--------------------------------- DARKSKY API  ----------------------------------------------- -->
+
         var defaultLat = 29.4241;
         var defaultLong = -98.4936;
-
+        var lngLat = {lng:defaultLong, lat:defaultLat};
+        var count = 0;
         function callWeather(long, lat) {
             var weatherLink = $.ajax("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/" + darkSkyKey + "/" + defaultLat + "," + defaultLong);
             weatherLink.done(function (x) {
-                console.log(x.daily.data);
                 $.each(x.daily.data, function (index, data) {
+                    if(count < 3){
                     var forecast = "<div class='card-img'><img src= 'icon/" + data.icon + ".svg'</div>";
                     var content = "<div class=\"card\" style=\"width: 18rem;\">";
                     content += "<div class='card-body'>";
@@ -101,19 +100,59 @@
                     content += "</h6>";
                     content += "</div>";
                     content += "</div>";
-
                     $(".weather-boxes").append(content);
-
+                    count++;
+                    }
                 });
-            });
+                if (x.daily.data[0].icon == "rain") {
+                    $('body').css('background-image', 'url("img/raining.gif")')
+                }
+                else if (x.daily.data[0].icon == "clear-day") {
+                    $('body').css({'background-image': 'url("img/clear-blue-sky-landscape.jpg")', "background-size": "cover" })
+                }
+                else if (x.daily.data[0].icon == "partly-cloudy-day") {
+                    $('body').css({'background-image': 'url("img/partly-cloudy-day.gif")', "background-size": "cover" })
+                }
+                else if (x.daily.data[0].icon == "cloudy") {
+                    $('body').css({'background-image': 'url("img/cloudy-sky.png")', "background-size": "cover" })
+                }
+                else if (x.daily.data[0].icon == "snow") {
+                    $('body').css({'background-image': 'url("img/snowing.gif")', "background-size": "cover" })
+                }
+                else if (x.daily.data[0].icon == "fog") {
+                    $('body').css({'background-image': 'url("img/foggy.png")', "background-size": "cover" })
+                }
+                else if (x.daily.data[0].icon == "wind") {
+                    $('body').css({'background-image': 'url("img/windy-kitty.gif")' })
+                }
 
+            });
+            count = 0;
             weatherLink.fail(function (x) {
                 console.log("Something went wrong");
             });
         }
-        callWeather();
 
-        <!-- MAPBOX API  -->
+        // if (x.daily.data[0].icon == "Rain") {
+        //     $('body').css('background-image', 'url("http://www.gifimili.com/gif/2018/03/pluie-dessin-parapluie.gif")')
+        // }
+        // else if (data.list[0].weather[0].main == "Clouds") {
+        //     $('body').css('background-image', 'url("https://orig00.deviantart.net/11fe/f/2010/034/8/0/sea_of_clouds___iv_by_mattthesamurai.gif")')
+        // }
+        // else if (data.list[0].weather[0].main == "Clear") {
+        //     $('body').css('background-image', 'url("images/clear-bg.jpg")')
+        // }
+        //
+
+
+        callWeather();
+        reverseGeocode(lngLat, mapboxToken).then(function(results) {
+            console.log (results );
+            $("h2").empty();
+            $("h2").append(results.features[3].text);
+        });
+
+        <!-------------------------- MAPBOX API -------------------------------------------- -->
 
         mapboxgl.accessToken = mapboxToken;
         var map = new mapboxgl.Map({
@@ -122,58 +161,73 @@
             zoom: 8,
             center: [defaultLong, defaultLat]
          });
+
         var markerOptions = {
             color: "#f00",
             draggable: true
         };
 
         var marker = new mapboxgl.Marker(markerOptions)
+            .remove()
             .setLngLat([defaultLong, defaultLat])
             .addTo(map);
-
-        // var coordinates = document.getElementById('coordinates');
 
         function onDragEnd() {
             var lngLat = marker.getLngLat();
             defaultLong = parseFloat(lngLat.lng);
             defaultLat = parseFloat(lngLat.lat);
-            // coordinates.style.display = 'block';
-            // coordinates.innerHTML = 'Longitude: ' + lngLat.lng + '<br />Latitude: ' + lngLat.lat;
+
+            console.log(defaultLong);
+            console.log(defaultLat);
+
+            console.log(lngLat.lng);
+            console.log(lngLat.lat);
             $(".weather-boxes").empty();
             callWeather(defaultLong,defaultLat);
+            reverseGeocode(lngLat, mapboxToken).then(function(results) {
+                console.log (results );
+                $("h2").empty();
+                $("h2").append(results.features[3].text);
+            });
         }
 
         marker.on('dragend', onDragEnd);
-
-
-        // $(".input-group-text").click(function () {
-        //     var search = $(".form-control").val();
-        //     geocode(search, mapboxToken).then(function (result) {
-        //         defaultLong = result[1];
-        //         defaultLat = result[0];
-        //         callWeather(defaultLong,defaultLat);
-        //     });
-        //
-        // });
 
         $("#fly").click(function () {
             var search = $(".form-control").val();
             geocode(search, mapboxToken).then(function (result) {
 
-
                 defaultLong = result[0];
                 defaultLat = result[1];
+                lngLat.lat = defaultLat;
+                lngLat.lng = defaultLong;
                 map.flyTo({
                     center:[
                         defaultLong,
                         defaultLat
                     ]
                 });
-            });
+                var marker = new mapboxgl.Marker(markerOptions)
+                    .remove()
+                    .setLngLat([defaultLong, defaultLat])
+                    .addTo(map);
+                reverseGeocode(lngLat, mapboxToken).then(function(results) {
+                    console.log (results.features[3].text);
+                    $("h2").empty();
+                    $("h2").append(results.features[3].text);
+                });
+
 
         $(".weather-boxes").empty();
         callWeather();
+            });
         });
+
+
+
+
+
+
     });
 
 </script>
