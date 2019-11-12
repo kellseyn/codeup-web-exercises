@@ -26,6 +26,11 @@ const users = [
     name: 'justin',
     email: 'justin@codeup.com',
     languages: ['html', 'css', 'javascript', 'php']
+  },
+  {
+      name: 'kellsey',
+      email: 'kellseyneagley@gmail.com'
+      languages: ['html', 'css', 'javascript']
   }
 ];
 
@@ -61,22 +66,19 @@ let emails = [];
 let names = [];
 
 // TODO: rewrite the following using arrow functions
-// users.forEach(function(user) {
-//   return emails.push(user.email);
-// });
-// users.forEach(function(user) {
-//   return names.push(user.name);
-// });
+users.forEach((user) => emails.push(user.email));
+users.forEach((user) => names.push(user.name));
 
-const getEmail = (n) => {for (let user of users) {
-    return n.push(user.email);
-}};
-const getName = (n) => {for (let user of users){
-    return n.push(user.name);
-
-}};
-getName(users);
-getEmail(users);
+//
+// const getEmail = (n) => {for (let user of users) {
+//     return n.push(user.email);
+// }};
+// const getName = (n) => {for (let user of users){
+//     return n.push(user.name);
+//
+// }};
+// getName(users);
+// getEmail(users);
 
 // TODO: replace `var` with `let` in the following declaration
 let developers = [];
