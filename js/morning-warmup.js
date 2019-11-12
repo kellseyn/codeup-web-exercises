@@ -55,13 +55,13 @@ function areaCircle(d){
 
     return(areaC)
 }
-console.log(areaCircle(5))
+console.log(areaCircle(5));
 
 //10/3 Write a JS function that returns the perimeter of a quadrilateral
 function perimeterQuad(a,b,c,d){
     return a + b + c + d;
 }
-console.log(perimeterQuad(2,3,4,5))
+console.log(perimeterQuad(2,3,4,5));
 
 //10/4 write a js function that returns the type of an arguement
 function checkType(x){
@@ -369,3 +369,21 @@ function rando(){
     return Boolean(Math.floor(Math.random() * 2));
 }
 console.log(rando());
+
+//11.12 Given this array [1,2,3,4,5,6,7,8] write a loop that returns an array of all even numbers
+
+var myNum = [1,2,3,4,5,6,7,8];
+
+function isEven(arr) {
+    var bucket = [];
+    arr.forEach(function (num) {
+        if (num % 2 === 0){
+            bucket.push(num)
+        }
+    });
+    return bucket;
+}
+
+console.log(isEven(myNum));
+
+console.log(isEven());
