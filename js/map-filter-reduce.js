@@ -36,7 +36,23 @@ const users = [
     }
 ];
 
-let threeLang = languages(function(n){
-    return n.length.filter >= 3;
-});
+const threeLang = users.filter(users => users.languages.length >= 3);
     console.log(threeLang);
+
+const emails = users.map(users => users.email);
+console.log(emails);
+
+const experience = users.reduce((total, users) => {return total + users.yearsOfExperience},0);
+console.log(experience);
+
+const avgExperience = experience / users.length;
+console.log(avgExperience);
+
+const longest = emails.reduce((a, b) => { return a.length > b.length ? a : b; });
+console.log(longest);
+
+
+const name = users.map(users => users.name);
+console.log(name);
+console.log(`Your instructors are: ${name}.`);
+
