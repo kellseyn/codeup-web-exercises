@@ -136,17 +136,6 @@
             });
         }
 
-        // if (x.daily.data[0].icon == "Rain") {
-        //     $('body').css('background-image', 'url("http://www.gifimili.com/gif/2018/03/pluie-dessin-parapluie.gif")')
-        // }
-        // else if (data.list[0].weather[0].main == "Clouds") {
-        //     $('body').css('background-image', 'url("https://orig00.deviantart.net/11fe/f/2010/034/8/0/sea_of_clouds___iv_by_mattthesamurai.gif")')
-        // }
-        // else if (data.list[0].weather[0].main == "Clear") {
-        //     $('body').css('background-image', 'url("images/clear-bg.jpg")')
-        // }
-        //
-
 
         callWeather();
         reverseGeocode(lngLat, mapboxToken).then(function(results) {
@@ -225,13 +214,6 @@
         callWeather();
             });
         });
-
-
-
-
-
-
-
 
     });
 
