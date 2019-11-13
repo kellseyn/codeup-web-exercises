@@ -29,7 +29,7 @@ const users = [
   },
   {
       name: 'kellsey',
-      email: 'kellseyneagley@gmail.com'
+      email: 'kellseyneagley@gmail.com',
       languages: ['html', 'css', 'javascript']
   }
 ];

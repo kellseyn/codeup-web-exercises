@@ -184,3 +184,8 @@ var hamsters = [
     }
 ];
 
+const furColors = hamsters.map(hamsters => hamsters.fur);
+console.log(furColors);
+
+const uniqueItems = Array.from(new Set(furColors));
+console.log(uniqueItems);
