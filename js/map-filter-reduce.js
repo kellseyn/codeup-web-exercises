@@ -36,13 +36,13 @@ const users = [
     }
 ];
 
-const threeLang = users.filter(users => users.languages.length >= 3);
+const threeLang = users.filter(user => user.languages.length >= 3);
     console.log(threeLang);
 
-const emails = users.map(users => users.email);
+const emails = users.map(user => user.email);
 console.log(emails);
 
-const experience = users.reduce((total, users) => {return total + users.yearsOfExperience},0);
+const experience = users.reduce((total, user) => {return total + user.yearsOfExperience},0);
 console.log(experience);
 
 const avgExperience = experience / users.length;
@@ -51,8 +51,22 @@ console.log(avgExperience);
 const longest = emails.reduce((a, b) => { return a.length > b.length ? a : b; });
 console.log(longest);
 
+// if(b.length > a.length){
+// return b
+//} else {
+// return a
+//}
 
-const name = users.map(users => users.name);
+const name = users.reduce((str, user) => {
+    return `${str}${user.name},`
+}, "Your instructors are: ") + ".";
 console.log(name);
-console.log(`Your instructors are: ${name}.`);
+
+
+let listOfLanguages = Array.from(users.reduce(accumulator, user) => {
+    user.languages.map(language => accumulator.add(language));
+    return accumulator;
+} new set()
+);
+
 
