@@ -372,18 +372,37 @@ console.log(rando());
 
 //11.12 Given this array [1,2,3,4,5,6,7,8] write a loop that returns an array of all even numbers
 
-var myNum = [1,2,3,4,5,6,7,8];
+// var myNum = [1,2,3,4,5,6,7,8];
+//
+// function isEven(arr) {
+//     var bucket = [];
+//     arr.forEach(function (num) {
+//         if (num % 2 === 0){
+//             bucket.push(num)
+//         }
+//     });
+//     return bucket;
+// }
+//
+// console.log(isEven(myNum));
+//
+// console.log(isEven());
 
-function isEven(arr) {
-    var bucket = [];
-    arr.forEach(function (num) {
-        if (num % 2 === 0){
-            bucket.push(num)
+
+//11.14 write a function that returns a promise the promise should resolve if the function takes in an even number, and reject if passed anything else
+
+const evenPromise = num => {
+   return new Promise((resolve, reject) => {
+        if (num % 2 === 0) {
+            resolve(`Why yes, the number ${num} is an even number`);
+        } else {
+            reject(`Woe is you, ${num} is not an even number`);
         }
     });
-    return bucket;
-}
+};
 
-console.log(isEven(myNum));
+let randomNum = Math.floor(Math.random() * 10 ) + 1;
 
-console.log(isEven());
+evenPromise(randomNum)
+    .then(message => console.log(message))
+    .catch(message => console.log(message));
