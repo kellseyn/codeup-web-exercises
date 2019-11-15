@@ -406,3 +406,15 @@ let randomNum = Math.floor(Math.random() * 10 ) + 1;
 evenPromise(randomNum)
     .then(message => console.log(message))
     .catch(message => console.log(message));
+
+//11.15 write a function that returns a promise it should resolve with a message of "Hello." Write to the HTML doc an h1 that has the text of the resolve
+
+const helloPromise = () => {
+    return new Promise((resolve) =>{
+        resolve("Hello.");
+    })
+};
+
+helloPromise().then(message => {
+    document.getElementsByTagName("body")[0].innerHTML += `<h1>${message}</h1>`;
+});
