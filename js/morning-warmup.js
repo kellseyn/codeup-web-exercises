@@ -418,3 +418,10 @@ const helloPromise = () => {
 helloPromise().then(message => {
     document.getElementsByTagName("body")[0].innerHTML += `<h1>${message}</h1>`;
 });
+
+//11.18 write a function that returns Pi to 6 decimal places as a number
+
+function piSix(){
+    return parseFloat(Math.PI.toFixed(6));
+}
+console.log(piSix());
