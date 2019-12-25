@@ -1,0 +1,22 @@
+html{
+
+}
+
+body{
+    color: goldenrod;
+}
+.jumbotron{
+    background-color: darkgreen;
+    background-image: url("../img/zackandi.jpg");
+    background-repeat: no-repeat;
+    background-position: right;
+    height: 856px;
+    padding-top: 15px;
+}
+.container{
+    font-family: 'Mountains of Christmas', cursive;
+}
+.container.display-4{
+    display: flex;
+
+}
