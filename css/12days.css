@@ -1,5 +1,4 @@
 html{
-
 }
 
 body{
@@ -13,10 +12,24 @@ body{
     height: 856px;
     padding-top: 15px;
 }
+.gif-container {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("../img/snowing.gif")!important;
+    z-index: 1000;
+}
 .container{
     font-family: 'Mountains of Christmas', cursive;
 }
 .container.display-4{
     display: flex;
 
+}
+.songlist{
+ padding-left: 15px;
 }
