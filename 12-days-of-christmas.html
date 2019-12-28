@@ -13,7 +13,7 @@
         <div class="container">
             <h1 class="display-4"><u>Merry Christmas</u></h1>
         </div>
-        <div class="songlist">
+        <div id="songlist" class="songlist">
             <h4>My favorite Christmas songs</h4>
             <ul>
                 <a href="https://www.youtube.com/watch?v=YDCmeKs8Zpk"><li>Christmas Cookies - George Strait</li></a>
@@ -25,8 +25,8 @@
         </div>
         <form class="form-inline">
             <div class="form-group mx-sm-3 mb-2">
-                <label for="inputPassword2" class="sr-only">Add Song</label>
-                <input type="password" class="form-control" id="inputPassword2" placeholder="Password">
+                <label for="inputSong" class="sr-only">Add Song</label>
+                <input type="text" class="form-control" id="inputSong" placeholder="SONG">
             </div>
             <button type="submit" class="btn btn-primary mb-2">ADD</button>
         </form>
@@ -43,7 +43,11 @@
 <script>
    $(document).ready(function () {
        "use strict";
-
+    $(".btn").click(function () {
+        var mysong = $('#inputSong').val();
+       $("#songlist ul").append('<li>' + mysong + '</li>');
+       return false;
+       })
    })
 </script>
 </body>
